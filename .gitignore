@@ -136,3 +136,51 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+# Environment variables and secrets
+.env
+.env.local
+.env.development
+.env.production
+.env.staging
+*.env
+
+# Secrets and sensitive files
+SECRETS_CONFIGURATION.md
+secrets.txt
+secrets.json
+config/secrets.yml
+config/secrets.yaml
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Static files (generated)
+staticfiles/
+static/
+
+# Media files (user uploads)
+media/
+
+# Docker
+.dockerignore
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
