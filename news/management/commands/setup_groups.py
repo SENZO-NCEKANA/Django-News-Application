@@ -10,13 +10,29 @@ from news.models import Article, Newsletter, Publisher, Category
 
 class Command(BaseCommand):
     """
-    Command to create user groups with appropriate permissions.
+    Django management command to set up user groups and permissions.
+    
+    Creates role-based user groups (Readers, Journalists, Editors) with
+    appropriate permissions for the news application functionality.
+    
+    :param help: Command description for Django CLI
+    :type help: str, 'Create user groups and assign permissions'
     """
     help = 'Create user groups and assign permissions'
 
     def handle(self, *args, **options):
         """
-        Create groups and assign permissions.
+        Execute the group and permission setup process.
+        
+        Creates user groups with appropriate permissions for different
+        roles in the news application system.
+        
+        :param args: Positional arguments (unused)
+        :type args: tuple
+        :param options: Command options (unused)
+        :type options: dict
+        :return: None
+        :rtype: None
         """
         # Get content types
         article_ct = ContentType.objects.get_for_model(Article)

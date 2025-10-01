@@ -16,6 +16,20 @@ from .models import Article, Subscription
 def handle_article_approval(sender, instance, created, **kwargs):
     """
     Handle article approval by sending emails and posting to X (Twitter).
+    
+    This signal is triggered when an article is saved and approved. It sends
+    email notifications to subscribers and posts to social media platforms.
+    
+    :param sender: The model class that sent the signal (Article)
+    :type sender: Article class
+    :param instance: The actual instance being saved
+    :type instance: Article
+    :param created: Boolean indicating if this is a new instance
+    :type created: bool
+    :param kwargs: Additional keyword arguments
+    :type kwargs: dict
+    :return: None
+    :rtype: None
     """
     if instance.is_approved and instance.status == 'approved':
         send_approval_notifications(instance)

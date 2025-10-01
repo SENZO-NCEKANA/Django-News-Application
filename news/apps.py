@@ -12,4 +12,17 @@ class NewsConfig(AppConfig):
     name = 'news'
 
     def ready(self):
-        import news.signals
+        """
+        Initialize application when Django starts.
+        
+        This method is called when Django starts up and is used to
+        register signal handlers and perform other initialization tasks.
+        
+        :return: None
+        :rtype: None
+        """
+        # Import signals to register them
+        try:
+            import news.signals  # noqa: F401
+        except ImportError:
+            pass
