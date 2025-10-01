@@ -20,7 +20,16 @@ from .forms import (
 
 def home(request):
     """
-    Home page displaying recent articles.
+    Display the home page with published articles and navigation options.
+    
+    This view shows the latest published articles with pagination, along with
+    available categories and publishers for filtering. It's accessible to all
+    users and serves as the main landing page.
+    
+    :param request: HTTP request object
+    :type request: HttpRequest
+    :return: Rendered home page template with articles and filters
+    :rtype: HttpResponse
     """
     articles = Article.objects.filter(
         status='published'
@@ -40,7 +49,16 @@ def home(request):
 
 def register(request):
     """
-    User registration view with role selection.
+    Handle user registration with role-based account creation.
+    
+    This view processes user registration forms, creates new user accounts
+    with specified roles (reader, journalist, editor), and automatically
+    logs in successful registrations.
+    
+    :param request: HTTP request object containing form data
+    :type request: HttpRequest
+    :return: Redirect to home page on success, registration form on GET
+    :rtype: HttpResponse or HttpResponseRedirect
     """
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)

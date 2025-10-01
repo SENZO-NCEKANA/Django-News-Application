@@ -16,14 +16,32 @@ from .serializers import (
 
 class ArticleListAPIView(generics.ListCreateAPIView):
     """
-    API view for listing and creating articles.
+    REST API view for listing and creating articles with role-based filtering.
+    
+    This view provides GET and POST endpoints for articles, with different
+    access patterns based on user roles. Readers see only published articles
+    from their subscriptions, journalists see their own articles, and editors
+    see articles from their publishers plus pending articles.
+    
+    :param serializer_class: Serializer for article data transformation
+    :type serializer_class: ArticleSerializer
+    :param permission_classes: Authentication requirements
+    :type permission_classes: list, contains IsAuthenticated
     """
     serializer_class = ArticleSerializer
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
         """
-        Filter articles based on user role and subscriptions.
+        Filter articles based on user role and subscription preferences.
+        
+        Implements role-based access control:
+        - Readers: Published articles from subscribed publishers/journalists
+        - Journalists: All their own articles regardless of status
+        - Editors: Articles from their publishers plus pending articles
+        
+        :return: Filtered queryset of articles based on user role
+        :rtype: QuerySet[Article]
         """
         user = self.request.user
 
