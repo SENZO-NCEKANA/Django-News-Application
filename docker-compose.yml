@@ -1,40 +1,16 @@
-version: '3.8'
-
 services:
-  db:
-    image: mysql:8.0
-    environment:
-      MYSQL_DATABASE: news_app
-      MYSQL_USER: news_user
-      MYSQL_PASSWORD: news_password
-      MYSQL_ROOT_PASSWORD: root_password
-    volumes:
-      - db_data:/var/lib/mysql
-    ports:
-      - "3306:3306"
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      timeout: 20s
-      retries: 10
-
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: sh -c "python manage.py migrate && python manage.py create_sample_data && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
     ports:
       - "8000:8000"
     environment:
       - DEBUG=1
-      - DATABASE_URL=mysql://news_user:news_password@db:3306/news_app
-    depends_on:
-      db:
-        condition: service_healthy
+      - SECRET_KEY=django-insecure-test-key-for-docker
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/"]
       interval: 30s
       timeout: 10s
       retries: 3
-
-volumes:
-  db_data:
