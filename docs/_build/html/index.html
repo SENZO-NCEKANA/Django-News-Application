@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>News Application Documentation &#8212; News Application 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Models Documentation" href="models.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="news-application-documentation">
+<h1>News Application Documentation<a class="headerlink" href="#news-application-documentation" title="Link to this heading">¶</a></h1>
+<p>Welcome to the News Application documentation. This Django-based news application provides a comprehensive platform for managing news articles, publishers, journalists, and readers with role-based access control.</p>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Role-based Access Control</strong>: Support for readers, journalists, and editors</p></li>
+<li><p><strong>Article Management</strong>: Create, edit, approve, and publish articles</p></li>
+<li><p><strong>Publisher System</strong>: Manage multiple publishers with their own journalists and editors</p></li>
+<li><p><strong>Subscription System</strong>: Readers can subscribe to publishers or individual journalists</p></li>
+<li><p><strong>Newsletter System</strong>: Journalists can create newsletters for their subscribers</p></li>
+<li><p><strong>REST API</strong>: Full REST API support for all functionality</p></li>
+<li><p><strong>Search and Filtering</strong>: Advanced search capabilities with category and publisher filtering</p></li>
+</ul>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h2>
+<p>The application is built with Django and includes:</p>
+<ul class="simple">
+<li><p>Custom User model with role-based permissions</p></li>
+<li><p>Article management with approval workflow</p></li>
+<li><p>Publisher and journalist management</p></li>
+<li><p>Subscription system for readers</p></li>
+<li><p>REST API endpoints</p></li>
+<li><p>Email notifications for password reset</p></li>
+</ul>
+</section>
+<section id="api-documentation">
+<h2>API Documentation<a class="headerlink" href="#api-documentation" title="Link to this heading">¶</a></h2>
+<p>The application provides a comprehensive REST API for all functionality. See the API documentation for detailed endpoint information.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="models.html#news.models.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#news.models.Publisher"><code class="docutils literal notranslate"><span class="pre">Publisher</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#news.models.Category"><code class="docutils literal notranslate"><span class="pre">Category</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#news.models.Article"><code class="docutils literal notranslate"><span class="pre">Article</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#news.models.Newsletter"><code class="docutils literal notranslate"><span class="pre">Newsletter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#news.models.Subscription"><code class="docutils literal notranslate"><span class="pre">Subscription</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#news.models.PasswordResetToken"><code class="docutils literal notranslate"><span class="pre">PasswordResetToken</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#user-model">User Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#publisher-model">Publisher Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#category-model">Category Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#article-model">Article Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#newsletter-model">Newsletter Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#subscription-model">Subscription Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#passwordresettoken-model">PasswordResetToken Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="views.html">Views Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="views.html#news.views.home"><code class="docutils literal notranslate"><span class="pre">home()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#news.views.register"><code class="docutils literal notranslate"><span class="pre">register()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#news.views.user_login"><code class="docutils literal notranslate"><span class="pre">user_login()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#news.views.user_logout"><code class="docutils literal notranslate"><span class="pre">user_logout()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#news.views.article_list"><code class="docutils literal notranslate"><span class="pre">article_list()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#news.views.article_detail"><code class="docutils literal notranslate"><span class="pre">article_detail()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#news.views.create_article"><code class="docutils literal notranslate"><span class="pre">create_article()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#news.views.edit_article"><code class="docutils literal notranslate"><span class="pre">edit_article()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#news.views.approve_article"><code class="docutils literal notranslate"><span class="pre">approve_article()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#news.views.subscription_management"><code class="docutils literal notranslate"><span class="pre">subscription_management()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#news.views.delete_subscription"><code class="docutils literal notranslate"><span class="pre">delete_subscription()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#news.views.create_newsletter"><code class="docutils literal notranslate"><span class="pre">create_newsletter()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#news.views.search_articles"><code class="docutils literal notranslate"><span class="pre">search_articles()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#news.views.forgot_password"><code class="docutils literal notranslate"><span class="pre">forgot_password()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#news.views.reset_password"><code class="docutils literal notranslate"><span class="pre">reset_password()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#home-view">Home View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#registration-and-authentication">Registration and Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#article-management">Article Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#subscription-management">Subscription Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#newsletter-management">Newsletter Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#search-and-password-reset">Search and Password Reset</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-news.api_views">API Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#article-api-views">Article API Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#publisher-and-category-api-views">Publisher and Category API Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#newsletter-api-views">Newsletter API Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#subscription-api-views">Subscription API Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#api-functions">API Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-news.serializers">Serializers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#user-serializer">User Serializer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#article-serializers">Article Serializers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#other-serializers">Other Serializers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="forms.html">Forms Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="forms.html#news.forms.UserRegistrationForm"><code class="docutils literal notranslate"><span class="pre">UserRegistrationForm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html#news.forms.ArticleForm"><code class="docutils literal notranslate"><span class="pre">ArticleForm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html#news.forms.ArticleApprovalForm"><code class="docutils literal notranslate"><span class="pre">ArticleApprovalForm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html#news.forms.NewsletterForm"><code class="docutils literal notranslate"><span class="pre">NewsletterForm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html#news.forms.SubscriptionForm"><code class="docutils literal notranslate"><span class="pre">SubscriptionForm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html#news.forms.SearchForm"><code class="docutils literal notranslate"><span class="pre">SearchForm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html#news.forms.ForgotPasswordForm"><code class="docutils literal notranslate"><span class="pre">ForgotPasswordForm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html#news.forms.ResetPasswordForm"><code class="docutils literal notranslate"><span class="pre">ResetPasswordForm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html#user-registration-form">User Registration Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html#article-forms">Article Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html#newsletter-form">Newsletter Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html#subscription-form">Subscription Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html#search-form">Search Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms.html#password-reset-forms">Password Reset Forms</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="management.html">Management Commands Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="management.html#module-news.management.commands.create_sample_data">Management Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="management.html#create-sample-data-command">Create Sample Data Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="management.html#module-news.management.commands.setup_groups">Setup Groups Command</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">News Application</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views.html">Views Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forms.html">Forms Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="management.html">Management Commands Documentation</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="models.html" title="next chapter">Models Documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Django News App.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
