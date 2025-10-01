@@ -1,0 +1,25 @@
+{% extends 'news/base.html' %}
+
+{% block title %}Delete Subscription - News Application{% endblock %}
+
+{% block content %}
+<h1>Delete Subscription</h1>
+
+<div class="article-card">
+    <h2>Are you sure you want to unsubscribe from:</h2>
+    <h3>
+        {% if subscription.publisher %}
+            Publisher: {{ subscription.publisher.name }}
+        {% else %}
+            Journalist: {{ subscription.journalist.username }}
+        {% endif %}
+    </h3>
+    <p>Subscribed on: {{ subscription.created_at|date:"M d, Y" }}</p>
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Yes, Unsubscribe</button>
+    <a href="{% url 'news:subscription_management' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
