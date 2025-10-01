@@ -42,7 +42,11 @@ A comprehensive Django-based news application with role-based access control, fe
    ```
 
 4. **Configure environment variables**
-   Create a `.env` file in the project root:
+   Copy the environment template and create a `.env` file:
+   ```bash
+   cp env.template .env
+   ```
+   Then edit `.env` with your actual values:
    ```env
    SECRET_KEY=your-secret-key-here
    DEBUG=True
@@ -82,7 +86,11 @@ A comprehensive Django-based news application with role-based access control, fe
    ```
 
 2. **Configure environment variables**
-   Create a `.env` file in the project root:
+   Copy the environment template and create a `.env` file:
+   ```bash
+   cp env.template .env
+   ```
+   Then edit `.env` with your actual values:
    ```env
    SECRET_KEY=your-secret-key-here
    DEBUG=True
