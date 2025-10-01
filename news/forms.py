@@ -11,7 +11,20 @@ from .models import (
 
 class UserRegistrationForm(UserCreationForm):
     """
-    Custom user registration form with role selection.
+    Custom user registration form with role-based account creation.
+    
+    Extends Django's UserCreationForm to include role selection and additional
+    user fields. Provides form validation and user-friendly interface for
+    account registration with role-based access control.
+    
+    :param role: User role selection (reader, editor, journalist)
+    :type role: ChoiceField, choices=User.ROLE_CHOICES
+    :param email: User email address for account
+    :type email: EmailField
+    :param first_name: User's first name
+    :type first_name: CharField, max_length=30
+    :param last_name: User's last name
+    :type last_name: CharField, max_length=30
     """
     role = forms.ChoiceField(
         choices=User.ROLE_CHOICES,
@@ -48,7 +61,21 @@ class UserRegistrationForm(UserCreationForm):
 
 class ArticleForm(forms.ModelForm):
     """
-    Form for creating and editing articles.
+    Form for creating and editing articles with validation.
+    
+    Provides a user-friendly interface for journalists to create and edit
+    articles with proper field validation and widget customization.
+    
+    :param title: Article headline with placeholder text
+    :type title: TextInput widget with form-control class
+    :param content: Article body text with textarea widget
+    :type content: Textarea widget, 10 rows, form-control class
+    :param summary: Optional article summary with textarea widget
+    :type summary: Textarea widget, 3 rows, form-control class
+    :param publisher: Publisher selection dropdown
+    :type publisher: Select widget with form-control class
+    :param category: Category selection dropdown
+    :type category: Select widget with form-control class
     """
     class Meta:
         """

@@ -11,13 +11,30 @@ User = get_user_model()
 
 class Command(BaseCommand):
     """
-    Command to create sample data for testing.
+    Django management command to create sample data for testing and development.
+    
+    This command creates a comprehensive set of sample data including users,
+    publishers, categories, articles, and newsletters for testing the news
+    application functionality.
+    
+    :param help: Command description for Django CLI
+    :type help: str, 'Create sample data for testing'
     """
     help = 'Create sample data for testing'
 
     def handle(self, *args, **options):
         """
-        Create sample data.
+        Execute the sample data creation process.
+        
+        Creates sample publishers, categories, users (journalists, editors, readers),
+        articles, and newsletters with realistic data for testing purposes.
+        
+        :param args: Positional arguments (unused)
+        :type args: tuple
+        :param options: Command options (unused)
+        :type options: dict
+        :return: None
+        :rtype: None
         """
         # Create publishers
         publisher1, created = Publisher.objects.get_or_create(

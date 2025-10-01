@@ -10,7 +10,27 @@ from .models import (
 
 class UserSerializer(serializers.ModelSerializer):
     """
-    Serializer for User model.
+    Serializer for User model with role-based field access.
+    
+    Provides serialization and deserialization for User objects with
+    appropriate field restrictions based on user roles and permissions.
+    
+    :param id: Unique user identifier (read-only)
+    :type id: int, read-only
+    :param username: User's unique username
+    :type username: str
+    :param email: User's email address
+    :type email: str
+    :param first_name: User's first name
+    :type first_name: str
+    :param last_name: User's last name
+    :type last_name: str
+    :param role: User's role in the system
+    :type role: str, choices=['reader', 'editor', 'journalist']
+    :param date_joined: Account creation timestamp (read-only)
+    :type date_joined: datetime, read-only
+    :param is_active: Account active status
+    :type is_active: bool
     """
     class Meta:
         """
@@ -53,7 +73,24 @@ class PublisherSerializer(serializers.ModelSerializer):
 
 class ArticleSerializer(serializers.ModelSerializer):
     """
-    Serializer for Article model.
+    Serializer for Article model with nested relationships.
+    
+    Provides comprehensive serialization for articles including author,
+    publisher, and category information with proper read/write field
+    handling for API operations.
+    
+    :param author: Article author information (read-only)
+    :type author: UserSerializer, read-only
+    :param publisher: Publisher information (read-only)
+    :type publisher: PublisherSerializer, read-only
+    :param category: Category information (read-only)
+    :type category: CategorySerializer, read-only
+    :param author_id: Author ID for write operations (write-only)
+    :type author_id: int, write-only
+    :param publisher_id: Publisher ID for write operations (write-only)
+    :type publisher_id: int, write-only, optional
+    :param category_id: Category ID for write operations (write-only)
+    :type category_id: int, write-only, optional
     """
     author = UserSerializer(read_only=True)
     publisher = PublisherSerializer(read_only=True)
