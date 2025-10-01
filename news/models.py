@@ -11,12 +11,12 @@ from django.utils import timezone
 class User(AbstractUser):
     """
     Custom user model with role-based access control for the news application.
-    
+
     This model extends Django's AbstractUser to provide role-based
     functionality for readers, journalists, and editors. It includes
     subscription management and content creation capabilities based on
     user roles.
-    
+
     :param role: User role determining access permissions and capabilities
     :type role: str, choices=['reader', 'editor', 'journalist']
     :param publisher_subscriptions: Publishers that the user is subscribed to
@@ -25,7 +25,8 @@ class User(AbstractUser):
     :type journalist_subscriptions: ManyToManyField to self (User)
     :param independent_articles: Articles created independently by journalists
     :type independent_articles: ManyToManyField to Article
-    :param independent_newsletters: Newsletters created independently by journalists
+    :param independent_newsletters: Newsletters created independently by
+        journalists
     :type independent_newsletters: ManyToManyField to Newsletter
     """
     ROLE_CHOICES = [
@@ -72,7 +73,7 @@ class User(AbstractUser):
     def is_reader(self):
         """
         Check if the user has reader role.
-        
+
         :return: True if user is a reader, False otherwise
         :rtype: bool
         """
@@ -81,7 +82,7 @@ class User(AbstractUser):
     def is_editor(self):
         """
         Check if the user has editor role.
-        
+
         :return: True if user is an editor, False otherwise
         :rtype: bool
         """
@@ -90,7 +91,7 @@ class User(AbstractUser):
     def is_journalist(self):
         """
         Check if the user has journalist role.
-        
+
         :return: True if user is a journalist, False otherwise
         :rtype: bool
         """
@@ -100,11 +101,11 @@ class User(AbstractUser):
 class Publisher(models.Model):
     """
     Model representing a publication/publisher organization.
-    
+
     Publishers manage their own journalists and editors, and can publish
     articles and newsletters. They have subscribers who receive content
     from their publications.
-    
+
     :param name: Unique name of the publisher organization
     :type name: str, max_length=100, unique=True
     :param description: Detailed description of the publisher
@@ -115,7 +116,8 @@ class Publisher(models.Model):
     :type created_at: datetime, auto_now_add=True
     :param editors: Users with editor role associated with this publisher
     :type editors: ManyToManyField to User, filtered by role='editor'
-    :param journalists: Users with journalist role associated with this publisher
+    :param journalists: Users with journalist role associated with this
+        publisher
     :type journalists: ManyToManyField to User, filtered by role='journalist'
     """
     name = models.CharField(max_length=100, unique=True)
@@ -164,10 +166,10 @@ class Category(models.Model):
 class Article(models.Model):
     """
     Model representing a news article with approval workflow.
-    
+
     Articles go through a workflow from draft to published status, with
     role-based permissions for creation, editing, and approval.
-    
+
     :param title: Headline of the article
     :type title: str, max_length=200
     :param content: Full text content of the article
@@ -181,7 +183,8 @@ class Article(models.Model):
     :param category: Article category for organization
     :type category: ForeignKey to Category, optional
     :param status: Current workflow status of the article
-    :type status: str, choices=['draft', 'pending', 'approved', 'published', 'rejected']
+    :type status: str, choices=['draft', 'pending', 'approved', 'published',
+        'rejected']
     :param is_approved: Boolean flag indicating if article is approved
     :type is_approved: bool, default=False
     :param approved_by: Editor who approved the article
@@ -256,10 +259,10 @@ class Article(models.Model):
     def approve(self, editor):
         """
         Approve the article and update approval metadata.
-        
+
         This method updates the article's approval status, sets the approving
         editor, and records the approval timestamp.
-        
+
         :param editor: User with editor role who is approving the article
         :type editor: User, must have role='editor'
         :return: None
@@ -268,7 +271,7 @@ class Article(models.Model):
         """
         if not editor.is_editor():
             raise ValueError("Only editors can approve articles")
-        
+
         self.is_approved = True
         self.status = 'approved'
         self.approved_by = editor

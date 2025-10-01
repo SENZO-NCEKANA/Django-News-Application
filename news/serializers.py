@@ -11,10 +11,10 @@ from .models import (
 class UserSerializer(serializers.ModelSerializer):
     """
     Serializer for User model with role-based field access.
-    
+
     Provides serialization and deserialization for User objects with
     appropriate field restrictions based on user roles and permissions.
-    
+
     :param id: Unique user identifier (read-only)
     :type id: int, read-only
     :param username: User's unique username
@@ -74,11 +74,11 @@ class PublisherSerializer(serializers.ModelSerializer):
 class ArticleSerializer(serializers.ModelSerializer):
     """
     Serializer for Article model with nested relationships.
-    
+
     Provides comprehensive serialization for articles including author,
     publisher, and category information with proper read/write field
     handling for API operations.
-    
+
     :param author: Article author information (read-only)
     :type author: UserSerializer, read-only
     :param publisher: Publisher information (read-only)

@@ -23,18 +23,19 @@ import sys
 def main():
     """
     Execute Django management commands for the news application.
-    
+
     This function serves as the entry point for Django's command-line utility,
     handling administrative tasks such as running the development server,
     database migrations, and other Django management operations.
-    
+
     Sets the default Django settings module and executes command-line
     arguments through Django's management framework with proper error
     handling for import issues.
-    
+
     :return: None
     :rtype: None
-    :raises ImportError: If Django is not installed or virtual environment is not activated
+    :raises ImportError: If Django is not installed or virtual environment
+        is not activated
     """
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'news_app.settings')
     try:

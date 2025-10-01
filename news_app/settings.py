@@ -21,12 +21,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-c0(lwi5g@rsviqo)^^(ce8-4$fnn(%v-8hmxgb0mi=9fk!rk(0')
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY',
+    'django-insecure-c0(lwi5g@rsviqo)^^(ce8-4$fnn(%v-8hmxgb0mi=9fk!rk(0'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True').lower() == 'true'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = os.environ.get(
+    'ALLOWED_HOSTS', 'localhost,127.0.0.1'
+).split(',')
 
 
 # Application definition
@@ -83,14 +88,14 @@ if DATABASE_URL and 'mysql' in DATABASE_URL:
     # Parse MySQL database URL
     import pymysql
     pymysql.install_as_MySQLdb()
-    
+
     # Extract database info from URL
     db_info = DATABASE_URL.replace('mysql://', '').split('@')
     if len(db_info) == 2:
         user_pass, host_db = db_info
         user, password = user_pass.split(':')
         host, db_name = host_db.split('/')
-        
+
         DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.mysql',

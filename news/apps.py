@@ -14,10 +14,10 @@ class NewsConfig(AppConfig):
     def ready(self):
         """
         Initialize application when Django starts.
-        
+
         This method is called when Django starts up and is used to
         register signal handlers and perform other initialization tasks.
-        
+
         :return: None
         :rtype: None
         """

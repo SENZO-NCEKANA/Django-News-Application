@@ -14,13 +14,14 @@ from .models import (
 class CustomUserAdmin(UserAdmin):
     """
     Custom admin interface for User model with role-based management.
-    
+
     Extends Django's UserAdmin to provide enhanced user management with
     role-based fields, filtering, and search capabilities for the news
     application's user management system.
-    
+
     :param list_display: Fields displayed in admin list view
-    :type list_display: tuple, contains username, email, role, is_staff, date_joined
+    :type list_display: tuple, contains username, email, role, is_staff,
+        date_joined
     :param list_filter: Available filters for admin list view
     :type list_filter: tuple, contains role, is_staff, is_active, date_joined
     :param search_fields: Fields searchable in admin interface
