@@ -12,9 +12,10 @@ class User(AbstractUser):
     """
     Custom user model with role-based access control for the news application.
     
-    This model extends Django's AbstractUser to provide role-based functionality
-    for readers, journalists, and editors. It includes subscription management
-    and content creation capabilities based on user roles.
+    This model extends Django's AbstractUser to provide role-based
+    functionality for readers, journalists, and editors. It includes
+    subscription management and content creation capabilities based on
+    user roles.
     
     :param role: User role determining access permissions and capabilities
     :type role: str, choices=['reader', 'editor', 'journalist']
