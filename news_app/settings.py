@@ -120,10 +120,13 @@ if DATABASE_URL and 'mysql' in DATABASE_URL:
         }
 else:
     # Default to SQLite for development
+    # Use writable directory for Docker
+    db_path = os.path.join(BASE_DIR, 'db', 'db.sqlite3')
+    os.makedirs(os.path.dirname(db_path), exist_ok=True)
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'NAME': db_path,
         }
     }
 

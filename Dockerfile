@@ -1,5 +1,4 @@
 # Use Python 3.11 slim image as base
-FROM python:3.11-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -31,6 +30,9 @@ RUN chmod -R 755 /app
 
 # Change ownership to appuser
 RUN chown -R appuser:appuser /app
+
+# Create database directory with proper permissions
+RUN mkdir -p /app/db && chown -R appuser:appuser /app/db && chmod 755 /app/db
 
 # Collect static files
 RUN python manage.py collectstatic --noinput

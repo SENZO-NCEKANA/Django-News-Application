@@ -1,9 +1,10 @@
 services:
   web:
     build: .
-    command: sh -c "python manage.py migrate && python manage.py create_sample_data && python manage.py runserver 0.0.0.0:8000"
+    command: sh -c "mkdir -p /app/db && chmod 755 /app/db && python manage.py migrate && python manage.py create_sample_data && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
+      - db_data:/app/db
     ports:
       - "8000:8000"
     environment:
@@ -14,3 +15,6 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
+
+volumes:
+  db_data:
