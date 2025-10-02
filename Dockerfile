@@ -29,11 +29,11 @@ RUN adduser --disabled-password --gecos '' appuser
 # Set proper permissions
 RUN chmod -R 755 /app
 
-# Create database directory with proper permissions
-RUN mkdir -p /app/db && chmod 777 /app/db
-
 # Change ownership to appuser
 RUN chown -R appuser:appuser /app
+
+# Create database directory with proper permissions for appuser
+RUN mkdir -p /app/db && chown appuser:appuser /app/db && chmod 755 /app/db
 
 # Collect static files
 RUN python manage.py collectstatic --noinput
