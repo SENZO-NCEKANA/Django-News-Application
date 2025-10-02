@@ -5,7 +5,6 @@ This section documents all the Django models in the news application.
 
 .. automodule:: news.models
    :members:
-   :undoc-members:
    :show-inheritance:
 
 User Model
@@ -13,7 +12,6 @@ User Model
 
 .. autoclass:: news.models.User
    :members:
-   :undoc-members:
    :show-inheritance:
 
 Publisher Model
@@ -21,7 +19,6 @@ Publisher Model
 
 .. autoclass:: news.models.Publisher
    :members:
-   :undoc-members:
    :show-inheritance:
 
 Category Model
@@ -29,7 +26,6 @@ Category Model
 
 .. autoclass:: news.models.Category
    :members:
-   :undoc-members:
    :show-inheritance:
 
 Article Model
@@ -37,7 +33,6 @@ Article Model
 
 .. autoclass:: news.models.Article
    :members:
-   :undoc-members:
    :show-inheritance:
 
 Newsletter Model
@@ -45,7 +40,6 @@ Newsletter Model
 
 .. autoclass:: news.models.Newsletter
    :members:
-   :undoc-members:
    :show-inheritance:
 
 Subscription Model
@@ -53,7 +47,6 @@ Subscription Model
 
 .. autoclass:: news.models.Subscription
    :members:
-   :undoc-members:
    :show-inheritance:
 
 PasswordResetToken Model
@@ -61,5 +54,4 @@ PasswordResetToken Model
 
 .. autoclass:: news.models.PasswordResetToken
    :members:
-   :undoc-members:
    :show-inheritance:

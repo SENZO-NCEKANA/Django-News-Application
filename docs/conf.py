@@ -6,7 +6,7 @@
 import os
 import sys
 import django
-sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'news_app.settings'
 django.setup()
 
@@ -57,6 +57,5 @@ autodoc_default_options = {
     'members': True,
     'member-order': 'bysource',
     'special-members': '__init__',
-    'undoc-members': True,
     'exclude-members': '__weakref__'
 }

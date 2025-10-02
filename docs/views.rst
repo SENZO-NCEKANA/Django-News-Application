@@ -5,7 +5,6 @@ This section documents all the Django views in the news application.
 
 .. automodule:: news.views
    :members:
-   :undoc-members:
    :show-inheritance:
 
 Home View
