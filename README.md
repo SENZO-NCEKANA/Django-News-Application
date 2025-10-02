@@ -13,6 +13,7 @@ A comprehensive Django-based news application with role-based access control, fe
 - **Search and Filtering**: Advanced search capabilities with category and publisher filtering
 - **Email Notifications**: Password reset and article notifications
 - **Docker Support**: Containerized deployment ready
+- **Security**: Non-root user execution, secure ALLOWED_HOSTS configuration
 
 ## Prerequisites
 

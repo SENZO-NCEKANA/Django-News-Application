@@ -9,7 +9,6 @@ services:
     environment:
       - DEBUG=1
       - SECRET_KEY=django-insecure-test-key-for-docker
-    user: "0:0"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/"]
       interval: 30s
