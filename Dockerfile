@@ -41,9 +41,6 @@ RUN python manage.py collectstatic --noinput
 # Switch to non-root user
 USER appuser
 
-# Create database directory as appuser
-RUN mkdir -p /app/db && chmod 777 /app/db
-
 # Expose port
 EXPOSE 8000
 
