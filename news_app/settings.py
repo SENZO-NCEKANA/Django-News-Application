@@ -125,6 +125,10 @@ else:
     os.makedirs(os.path.dirname(db_path), exist_ok=True)
     # Ensure directory is writable
     os.chmod(os.path.dirname(db_path), 0o777)
+    # Create database file if it doesn't exist
+    if not os.path.exists(db_path):
+        open(db_path, 'a').close()
+        os.chmod(db_path, 0o666)
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
