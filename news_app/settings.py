@@ -123,6 +123,8 @@ else:
     # Use writable directory for Docker
     db_path = os.path.join(BASE_DIR, 'db', 'db.sqlite3')
     os.makedirs(os.path.dirname(db_path), exist_ok=True)
+    # Ensure directory is writable
+    os.chmod(os.path.dirname(db_path), 0o777)
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',

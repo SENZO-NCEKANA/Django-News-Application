@@ -33,7 +33,7 @@ RUN chmod -R 755 /app
 RUN chown -R appuser:appuser /app
 
 # Create database directory with proper permissions
-RUN mkdir -p /app/db && chown -R appuser:appuser /app/db && chmod 755 /app/db
+RUN mkdir -p /app/db && chown -R appuser:appuser /app/db && chmod 777 /app/db
 
 # Collect static files
 RUN python manage.py collectstatic --noinput
