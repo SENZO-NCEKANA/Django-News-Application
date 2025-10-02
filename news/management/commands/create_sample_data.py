@@ -154,27 +154,25 @@ class Command(BaseCommand):
 
         # Create sample articles
         article1, created = Article.objects.get_or_create(
-            title='AI Healthcare Assistant: Diagnosis, Medication Reminders, '
-                  'and Health Chatbot',
+            title='New Solar Panel Technology Increases Efficiency by 40%',
             defaults={
                 'content': (
-                    'A comprehensive AI healthcare assistant has been '
-                    'developed that revolutionizes patient care through '
-                    'three key features: intelligent diagnosis assistance, '
-                    'smart medication reminders, and an AI-powered health '
-                    'chatbot. This innovative system uses advanced machine '
-                    'learning algorithms to analyze symptoms, provide '
-                    'preliminary health assessments, and help patients '
-                    'manage their medications effectively. The AI chatbot '
-                    'component offers 24/7 health guidance, answering '
-                    'common medical questions and providing personalized '
-                    'health recommendations based on individual patient '
-                    'profiles and medical history.'
+                    'Researchers at the University of Technology have '
+                    'developed a revolutionary solar panel design that '
+                    'increases energy conversion efficiency by 40% compared '
+                    'to traditional panels. The new technology uses a '
+                    'multi-layered approach with advanced materials that '
+                    'capture sunlight across a broader spectrum. This '
+                    'breakthrough could significantly reduce the cost of '
+                    'solar energy and accelerate the transition to '
+                    'renewable power sources. The panels are expected to '
+                    'be commercially available within the next two years, '
+                    'with pilot installations planned in several countries.'
                 ),
                 'summary': (
-                    'Comprehensive AI healthcare assistant featuring '
-                    'diagnosis assistance, medication reminders, and '
-                    'intelligent health chatbot for 24/7 patient support.'
+                    'Revolutionary solar panel technology increases '
+                    'efficiency by 40%, potentially transforming renewable '
+                    'energy economics.'
                 ),
                 'author': journalist1,
                 'publisher': publisher1,
@@ -186,7 +184,7 @@ class Command(BaseCommand):
         if created:
             self.stdout.write(
                 self.style.SUCCESS(
-                    'Created article: AI Healthcare Assistant...'
+                    'Created article: New Solar Panel Technology...'
                 )
             )
 
@@ -217,7 +215,7 @@ class Command(BaseCommand):
             title='Weekly Tech Roundup',
             defaults={
                 'content': (
-                    'This week in technology: AI breakthroughs, '
+                    'This week in technology: renewable energy breakthroughs, '
                     'new smartphone releases, and cybersecurity updates.'
                 ),
                 'author': journalist1,
