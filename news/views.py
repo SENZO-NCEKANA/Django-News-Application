@@ -20,13 +20,18 @@ from .forms import (
 
 def home(request):
     """
-    Home page displaying recent articles.
+    Home page displaying recent published articles with pagination.
 
-    Args:
-        request: HTTP request object
+    This view displays the main landing page of the news application,
+    showing the most recent published articles with pagination support.
+    The page also includes categories and publishers for navigation.
 
-    Returns:
-        HttpResponse: Rendered home page with recent articles
+    :param request: HTTP request object containing user session and query
+        parameters
+    :type request: HttpRequest
+    :return: Rendered home page template with articles, categories, and
+        publishers context
+    :rtype: HttpResponse
     """
     articles = Article.objects.filter(
         status='published'
@@ -46,14 +51,18 @@ def home(request):
 
 def register(request):
     """
-    User registration view with role selection.
+    User registration view with role selection and automatic login.
 
-    Args:
-        request: HTTP request object
+    This view handles user registration with role-based account creation.
+    Users can register as readers, editors, or journalists. Upon successful
+    registration, users are automatically logged in and redirected to home.
 
-    Returns:
-        HttpResponse: Registration form or redirect after successful
-            registration
+    :param request: HTTP request object containing POST data for registration
+        or GET for displaying the form
+    :type request: HttpRequest
+    :return: Registration form template for GET requests, or redirect to
+        home page after successful registration
+    :rtype: HttpResponse or HttpResponseRedirect
     """
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)

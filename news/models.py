@@ -11,6 +11,27 @@ from django.utils import timezone
 class User(AbstractUser):
     """
     Custom user model with role-based fields for readers and journalists.
+
+    This model extends Django's AbstractUser to provide role-based access
+    control for a news application. Users can be readers, editors, or
+    journalists, each with different permissions and capabilities.
+
+    :param role: User role - one of 'reader', 'editor', or 'journalist',
+        defaults to 'reader'
+    :type role: str
+    :param publisher_subscriptions: Many-to-many relationship to Publisher
+        objects for reader subscriptions, defaults to empty
+    :type publisher_subscriptions: ManyToManyField
+    :param journalist_subscriptions: Many-to-many relationship to other User
+        objects with journalist role for reader subscriptions, defaults to
+        empty
+    :type journalist_subscriptions: ManyToManyField
+    :param independent_articles: Many-to-many relationship to Article objects
+        for journalist's independent articles, defaults to empty
+    :type independent_articles: ManyToManyField
+    :param independent_newsletters: Many-to-many relationship to Newsletter
+        objects for journalist's independent newsletters, defaults to empty
+    :type independent_newsletters: ManyToManyField
     """
     ROLE_CHOICES = [
         ('reader', 'Reader'),
@@ -54,21 +75,57 @@ class User(AbstractUser):
         return f"{self.username} ({self.get_role_display()})"
 
     def is_reader(self):
-        """Check if user is a reader."""
+        """
+        Check if user has reader role.
+
+        :return: True if user role is 'reader', False otherwise
+        :rtype: bool
+        """
         return self.role == 'reader'
 
     def is_editor(self):
-        """Check if user is an editor."""
+        """
+        Check if user has editor role.
+
+        :return: True if user role is 'editor', False otherwise
+        :rtype: bool
+        """
         return self.role == 'editor'
 
     def is_journalist(self):
-        """Check if user is a journalist."""
+        """
+        Check if user has journalist role.
+
+        :return: True if user role is 'journalist', False otherwise
+        :rtype: bool
+        """
         return self.role == 'journalist'
 
 
 class Publisher(models.Model):
     """
     Model representing a publication/publisher.
+
+    This model represents a news publication or publisher that can have
+    multiple editors and journalists associated with it. Publishers can
+    have articles and newsletters created by their associated journalists.
+
+    :param name: Publisher name, must be unique, defaults to None
+    :type name: str
+    :param description: Optional description of the publisher, defaults to
+        empty
+    :type description: str, optional
+    :param website: Optional website URL for the publisher, defaults to
+        empty
+    :type website: str, optional
+    :param created_at: Timestamp when publisher was created, auto-generated
+    :type created_at: datetime
+    :param editors: Many-to-many relationship to User objects with editor
+        role, defaults to empty
+    :type editors: ManyToManyField
+    :param journalists: Many-to-many relationship to User objects with
+        journalist role, defaults to empty
+    :type journalists: ManyToManyField
     """
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField(blank=True)
@@ -115,7 +172,47 @@ class Category(models.Model):
 
 class Article(models.Model):
     """
-    Model representing a news article.
+    Model representing a news article with approval workflow.
+
+    This model represents a news article that can be created by journalists,
+    reviewed by editors, and published to readers. Articles go through a
+    status-based approval workflow from draft to published.
+
+    :param title: Article title, maximum 200 characters, defaults to None
+    :type title: str
+    :param content: Full article content, defaults to None
+    :type content: str
+    :param summary: Optional article summary, maximum 500 characters,
+        defaults to empty
+    :type summary: str, optional
+    :param author: Foreign key to User with journalist role who authored
+        the article, required
+    :type author: ForeignKey
+    :param publisher: Foreign key to Publisher, can be null for independent
+        articles, defaults to None
+    :type publisher: ForeignKey, optional
+    :param category: Foreign key to Category for article classification,
+        can be null, defaults to None
+    :type category: ForeignKey, optional
+    :param status: Article status - one of 'draft', 'pending', 'approved',
+        'published', 'rejected', defaults to 'draft'
+    :type status: str
+    :param is_approved: Boolean flag indicating if article is approved,
+        defaults to False
+    :type is_approved: bool
+    :param approved_by: Foreign key to User with editor role who approved
+        the article, can be null, defaults to None
+    :type approved_by: ForeignKey, optional
+    :param approved_at: Timestamp when article was approved, can be null,
+        defaults to None
+    :type approved_at: datetime, optional
+    :param created_at: Timestamp when article was created, auto-generated
+    :type created_at: datetime
+    :param updated_at: Timestamp when article was last updated, auto-generated
+    :type updated_at: datetime
+    :param published_at: Timestamp when article was published, can be null,
+        defaults to None
+    :type published_at: datetime, optional
     """
     STATUS_CHOICES = [
         ('draft', 'Draft'),
@@ -177,10 +274,17 @@ class Article(models.Model):
 
     def approve(self, editor):
         """
-        Approve article by editor.
+        Approve article by editor and update status to published.
 
-        Args:
-            editor: User instance with editor role who approves the article
+        This method sets the article as approved, updates the status to
+        'approved', records the approving editor and timestamp, then saves
+        the changes.
+
+        :param editor: User instance with editor role who approves the
+            article
+        :type editor: User
+        :raises ValueError: If editor is not a valid User instance
+        :raises AttributeError: If editor does not have editor role
         """
         self.is_approved = True
         self.status = 'approved'
@@ -191,7 +295,28 @@ class Article(models.Model):
 
 class Newsletter(models.Model):
     """
-    Model representing a newsletter.
+    Model representing a newsletter created by journalists.
+
+    This model represents a newsletter that can be created by journalists
+    and associated with a publisher. Newsletters are typically sent to
+    subscribers and contain curated content.
+
+    :param title: Newsletter title, maximum 200 characters, defaults to
+        None
+    :type title: str
+    :param content: Newsletter content, defaults to None
+    :type content: str
+    :param author: Foreign key to User with journalist role who authored
+        the newsletter, required
+    :type author: ForeignKey
+    :param publisher: Foreign key to Publisher, can be null for independent
+        newsletters, defaults to None
+    :type publisher: ForeignKey, optional
+    :param created_at: Timestamp when newsletter was created, auto-generated
+    :type created_at: datetime
+    :param updated_at: Timestamp when newsletter was last updated,
+        auto-generated
+    :type updated_at: datetime
     """
     title = models.CharField(max_length=200)
     content = models.TextField()
@@ -223,7 +348,23 @@ class Newsletter(models.Model):
 
 class Subscription(models.Model):
     """
-    Model for managing user subscriptions.
+    Model for managing user subscriptions to publishers and journalists.
+
+    This model represents a subscription relationship between a user and
+    either a publisher or a journalist. Users can subscribe to receive
+    content from specific publishers or follow individual journalists.
+
+    :param user: Foreign key to User who is subscribing, required
+    :type user: ForeignKey
+    :param publisher: Foreign key to Publisher being subscribed to, can be
+        null if subscribing to journalist instead, defaults to None
+    :type publisher: ForeignKey, optional
+    :param journalist: Foreign key to User with journalist role being
+        subscribed to, can be null if subscribing to publisher instead,
+        defaults to None
+    :type journalist: ForeignKey, optional
+    :param created_at: Timestamp when subscription was created, auto-generated
+    :type created_at: datetime
     """
     user = models.ForeignKey(
         User,
@@ -264,7 +405,22 @@ class Subscription(models.Model):
 
 class PasswordResetToken(models.Model):
     """
-    Model for password reset tokens.
+    Model for password reset tokens with expiration and usage tracking.
+
+    This model represents a secure token used for password reset
+    functionality. Tokens are time-limited (24 hours) and can only be
+    used once to prevent security vulnerabilities.
+
+    :param user: Foreign key to User requesting password reset, required
+    :type user: ForeignKey
+    :param token: Unique token string for password reset, maximum 100
+        characters, defaults to None
+    :type token: str
+    :param created_at: Timestamp when token was created, auto-generated
+    :type created_at: datetime
+    :param is_used: Boolean flag indicating if token has been used,
+        defaults to False
+    :type is_used: bool
     """
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='password_reset_tokens'

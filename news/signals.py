@@ -26,8 +26,17 @@ def send_approval_notifications(article):
     """
     Send email notifications to subscribers when article is approved.
 
-    Args:
-        article: Article instance that was approved
+    This function sends email notifications to all subscribers of the
+    article's publisher and journalist when an article is approved. It
+    handles both publisher and journalist subscriptions, deduplicates
+    email addresses, and sends both HTML and plain text versions of the
+    notification.
+
+    :param article: Article instance that was approved and needs
+        notification sent to subscribers
+    :type article: Article
+    :raises Exception: If email sending fails, error is logged but not
+        raised
     """
     # Get all subscribers for the article's publisher and journalist
     publisher_subscribers = []
@@ -76,10 +85,19 @@ def send_approval_notifications(article):
 
 def post_to_twitter(article):
     """
-    Post article to Twitter when approved.
+    Post article to Twitter when approved using Twitter API v2.
 
-    Args:
-        article: Article instance to post to Twitter
+    This function posts a tweet about the approved article to Twitter
+    using the Twitter API v2. The tweet includes the article title,
+    summary, and a link to the full article. Twitter posting can be
+    disabled via settings.
+
+    :param article: Article instance to post to Twitter
+    :type article: Article
+    :raises requests.exceptions.RequestException: If Twitter API request
+        fails
+    :raises Exception: If Twitter posting is disabled or configuration
+        is invalid
     """
     # Check if Twitter is enabled
     if not getattr(settings, 'TWITTER_ENABLED', False):
