@@ -10,7 +10,28 @@ from .models import (
 
 class UserSerializer(serializers.ModelSerializer):
     """
-    Serializer for User model.
+    Serializer for User model with role-based field access.
+    
+    This serializer handles serialization of User objects for API responses.
+    It includes user identification, role information, and account status
+    while maintaining security by excluding sensitive fields.
+    
+    :param id: User's unique identifier
+    :type id: int
+    :param username: User's unique username
+    :type username: str
+    :param email: User's email address
+    :type email: str
+    :param first_name: User's first name
+    :type first_name: str
+    :param last_name: User's last name
+    :type last_name: str
+    :param role: User's role (reader, editor, journalist)
+    :type role: str
+    :param date_joined: Account creation timestamp
+    :type date_joined: datetime
+    :param is_active: Account active status
+    :type is_active: bool
     """
     class Meta:
         """
@@ -53,7 +74,24 @@ class PublisherSerializer(serializers.ModelSerializer):
 
 class ArticleSerializer(serializers.ModelSerializer):
     """
-    Serializer for Article model.
+    Serializer for Article model with nested relationships.
+    
+    This serializer handles article serialization with nested user, publisher,
+    and category information. It supports both read and write operations
+    with proper field handling for API endpoints.
+    
+    :param author: Nested UserSerializer for article author information
+    :type author: UserSerializer
+    :param publisher: Nested PublisherSerializer for publisher information
+    :type publisher: PublisherSerializer
+    :param category: Nested CategorySerializer for category information
+    :type category: CategorySerializer
+    :param author_id: Write-only field for author ID assignment
+    :type author_id: int
+    :param publisher_id: Write-only field for publisher ID assignment
+    :type publisher_id: int
+    :param category_id: Write-only field for category ID assignment
+    :type category_id: int
     """
     author = UserSerializer(read_only=True)
     publisher = PublisherSerializer(read_only=True)
@@ -79,6 +117,15 @@ class ArticleSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         """
         Create article with proper author assignment.
+        
+        This method creates a new article instance with the provided
+        validated data, handling author, publisher, and category
+        relationships properly.
+        
+        :param validated_data: Dictionary of validated form data
+        :type validated_data: dict
+        :return: Created Article instance
+        :rtype: Article
         """
         author_id = validated_data.pop('author_id')
         publisher_id = validated_data.pop('publisher_id', None)
