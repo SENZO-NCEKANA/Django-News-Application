@@ -11,7 +11,20 @@ from .models import (
 
 class UserRegistrationForm(UserCreationForm):
     """
-    Custom user registration form with role selection.
+    Custom user registration form with role selection and styling.
+    
+    This form extends Django's UserCreationForm to include role selection
+    and additional user fields. It provides Bootstrap styling for form
+    controls and validates user input for registration.
+    
+    :param role: User role selection field with choices from User.ROLE_CHOICES
+    :type role: ChoiceField
+    :param email: User email address field with email validation
+    :type email: EmailField
+    :param first_name: User's first name, maximum 30 characters
+    :type first_name: CharField
+    :param last_name: User's last name, maximum 30 characters
+    :type last_name: CharField
     """
     role = forms.ChoiceField(
         choices=User.ROLE_CHOICES,
@@ -40,6 +53,12 @@ class UserRegistrationForm(UserCreationForm):
         )
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize form with Bootstrap styling for all fields.
+        
+        This method applies Bootstrap form-control class to username
+        and password fields for consistent styling.
+        """
         super().__init__(*args, **kwargs)
         self.fields['username'].widget.attrs.update({'class': 'form-control'})
         self.fields['password1'].widget.attrs.update({'class': 'form-control'})
