@@ -21,6 +21,12 @@ from .forms import (
 def home(request):
     """
     Home page displaying recent articles.
+
+    Args:
+        request: HTTP request object
+
+    Returns:
+        HttpResponse: Rendered home page with recent articles
     """
     articles = Article.objects.filter(
         status='published'
@@ -41,6 +47,13 @@ def home(request):
 def register(request):
     """
     User registration view with role selection.
+
+    Args:
+        request: HTTP request object
+
+    Returns:
+        HttpResponse: Registration form or redirect after successful
+            registration
     """
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)

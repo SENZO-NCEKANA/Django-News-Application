@@ -176,7 +176,12 @@ class Article(models.Model):
         return self.title
 
     def approve(self, editor):
-        """Approve article by editor."""
+        """
+        Approve article by editor.
+
+        Args:
+            editor: User instance with editor role who approves the article
+        """
         self.is_approved = True
         self.status = 'approved'
         self.approved_by = editor
@@ -280,6 +285,9 @@ class PasswordResetToken(models.Model):
     def is_valid(self):
         """
         Check if token is valid (not used and not expired).
+
+        Returns:
+            bool: True if token is valid and not expired, False otherwise
         """
         from datetime import timedelta
 
@@ -293,5 +301,8 @@ class PasswordResetToken(models.Model):
     def is_expired(self):
         """
         Check if token is expired.
+
+        Returns:
+            bool: True if token is expired, False otherwise
         """
         return not self.is_valid()

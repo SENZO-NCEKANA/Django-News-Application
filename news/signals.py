@@ -25,6 +25,9 @@ def handle_article_approval(sender, instance, created, **kwargs):
 def send_approval_notifications(article):
     """
     Send email notifications to subscribers when article is approved.
+
+    Args:
+        article: Article instance that was approved
     """
     # Get all subscribers for the article's publisher and journalist
     publisher_subscribers = []
@@ -74,6 +77,9 @@ def send_approval_notifications(article):
 def post_to_twitter(article):
     """
     Post article to Twitter when approved.
+
+    Args:
+        article: Article instance to post to Twitter
     """
     # Check if Twitter is enabled
     if not getattr(settings, 'TWITTER_ENABLED', False):

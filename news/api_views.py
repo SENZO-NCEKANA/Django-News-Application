@@ -24,6 +24,9 @@ class ArticleListAPIView(generics.ListCreateAPIView):
     def get_queryset(self):
         """
         Filter articles based on user role and subscriptions.
+
+        Returns:
+            QuerySet: Filtered articles based on user permissions
         """
         user = self.request.user
 
@@ -59,6 +62,9 @@ class ArticleListAPIView(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         """
         Set the author to the current user.
+
+        Args:
+            serializer: Article serializer instance
         """
         serializer.save(author=self.request.user)
 
