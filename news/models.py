@@ -10,28 +10,7 @@ from django.utils import timezone
 
 class User(AbstractUser):
     """
-    Custom user model with role-based fields for readers and journalists.
-
-    This model extends Django's AbstractUser to provide role-based access
-    control for a news application. Users can be readers, editors, or
-    journalists, each with different permissions and capabilities.
-
-    :param role: User role - one of 'reader', 'editor', or 'journalist',
-        defaults to 'reader'
-    :type role: str
-    :param publisher_subscriptions: Many-to-many relationship to Publisher
-        objects for reader subscriptions, defaults to empty
-    :type publisher_subscriptions: ManyToManyField
-    :param journalist_subscriptions: Many-to-many relationship to other User
-        objects with journalist role for reader subscriptions, defaults to
-        empty
-    :type journalist_subscriptions: ManyToManyField
-    :param independent_articles: Many-to-many relationship to Article objects
-        for journalist's independent articles, defaults to empty
-    :type independent_articles: ManyToManyField
-    :param independent_newsletters: Many-to-many relationship to Newsletter
-        objects for journalist's independent newsletters, defaults to empty
-    :type independent_newsletters: ManyToManyField
+    Custom user model with role-based fields.
     """
     ROLE_CHOICES = [
         ('reader', 'Reader'),
