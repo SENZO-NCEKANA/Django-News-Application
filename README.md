@@ -36,7 +36,7 @@ A Django-based news application that allows readers to view articles published b
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/SENZO-NCEKANA/django-news-application.git
+   git clone https://github.com/SENZO-NCEKANA/Django-News-Application.git
    cd django-news-application
    ```
 
@@ -75,7 +75,7 @@ docker-compose up --build --force-recreate
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/django-news-application.git
+   git clone https://github.com/SENZO-NCEKANA/Django-News-Application.git
    cd django-news-application
    ```
 
@@ -263,4 +263,4 @@ django-news-application/
 
 ## Author
 
-This project was created as part of a Django development course.
+This project was created as part of a Capstone Project –Consolidation Task.
