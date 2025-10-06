@@ -6,14 +6,23 @@ This guide explains how to run the News Application using Docker.
 
 ### Option 1: Using Docker Compose (Recommended)
 
-1. **Clone the repository and navigate to the project directory**
+1. **If you have the project files locally:**
    ```bash
-   git clone <repository-url>
-   cd news-application
+   # Navigate to the project directory
+   cd /path/to/News-Application-2
+   
+   # Start the application
+   docker-compose up --build
    ```
 
-2. **Start the application with Docker Compose**
+2. **If using Docker Playground:**
    ```bash
+   # Upload the news-app-docker.zip file to Docker Playground
+   # Extract it and navigate to the directory
+   unzip news-app-docker.zip
+   cd news-app-docker
+   
+   # Start the application
    docker-compose up --build
    ```
 
