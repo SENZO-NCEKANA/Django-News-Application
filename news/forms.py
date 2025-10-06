@@ -67,7 +67,22 @@ class UserRegistrationForm(UserCreationForm):
 
 class ArticleForm(forms.ModelForm):
     """
-    Form for creating and editing articles.
+    Form for creating and editing articles with validation.
+    
+    This form provides fields for article creation and editing by journalists.
+    It includes title, content, summary, publisher, and category fields with
+    Bootstrap styling and validation.
+    
+    :param title: Article title field with placeholder text
+    :type title: CharField
+    :param content: Article content field with textarea widget
+    :type content: TextField
+    :param summary: Optional article summary field
+    :type summary: TextField
+    :param publisher: Publisher selection dropdown
+    :type publisher: ModelChoiceField
+    :param category: Category selection dropdown
+    :type category: ModelChoiceField
     """
     class Meta:
         """
@@ -97,6 +112,12 @@ class ArticleForm(forms.ModelForm):
         }
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize form with querysets for publisher and category fields.
+        
+        This method sets up the querysets for the publisher and category
+        dropdown fields to ensure they display all available options.
+        """
         super().__init__(*args, **kwargs)
         self.fields['publisher'].queryset = Publisher.objects.all()
         self.fields['category'].queryset = Category.objects.all()
@@ -104,7 +125,16 @@ class ArticleForm(forms.ModelForm):
 
 class ArticleApprovalForm(forms.ModelForm):
     """
-    Form for editors to approve articles.
+    Form for editors to approve articles with status control.
+    
+    This form allows editors to approve or reject articles by setting
+    the status and approval flag. It provides a clean interface for
+    the approval workflow.
+    
+    :param status: Article status selection field
+    :type status: ChoiceField
+    :param is_approved: Boolean checkbox for approval status
+    :type is_approved: BooleanField
     """
     class Meta:
         """
@@ -149,7 +179,16 @@ class NewsletterForm(forms.ModelForm):
 
 class SubscriptionForm(forms.ModelForm):
     """
-    Form for managing subscriptions.
+    Form for managing user subscriptions to publishers and journalists.
+    
+    This form allows users to subscribe to either publishers or journalists.
+    It includes validation to ensure only one type of subscription is selected
+    and provides a clean interface for subscription management.
+    
+    :param publisher: Publisher selection dropdown for subscription
+    :type publisher: ModelChoiceField
+    :param journalist: Journalist selection dropdown for subscription
+    :type journalist: ModelChoiceField
     """
     class Meta:
         """
