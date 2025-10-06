@@ -85,9 +85,9 @@ try:
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'news_app_db',
-            'USER': 'root',
-            'PASSWORD': 'Afro736966',
-            'HOST': 'localhost',
+            'USER': 'newsuser',
+            'PASSWORD': 'newspassword',
+            'HOST': 'db',
             'PORT': '3306',
             'OPTIONS': {
                 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
