@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}News Application{% endblock %}</title>
+    <style>
+        /* News App Dark Theme - Modern Professional Style */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation */
+        .header {
+            background-color: #2d2d2d;
+            border-bottom: 2px solid #00ff88;
+            padding: 1rem 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00ff88;
+            text-decoration: none;
+        }
+
+        .nav-brand:hover {
+            color: #ffffff;
+        }
+
+        .nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #00ff88;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Messages */
+        .messages {
+            margin: 1rem 0;
+        }
+
+        .message {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .message.success {
+            background-color: rgba(40, 167, 69, 0.2);
+            color: #00ff88;
+            border-left: 4px solid #00ff88;
+        }
+
+        .message.error {
+            background-color: rgba(220, 53, 69, 0.2);
+            color: #ff6b6b;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .message.info {
+            background-color: rgba(23, 162, 184, 0.2);
+            color: #17a2b8;
+            border-left: 4px solid #17a2b8;
+        }
+
+        /* Forms */
+        .form-group {
+            margin: 1rem 0;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #2d2d2d;
+            border: 2px solid #00ff88;
+            color: #ffffff;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            background-color: #2d2d2d;
+            border-color: #ffffff;
+            color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+            outline: none;
+        }
+
+        .form-control::placeholder {
+            color: #cccccc;
+        }
+
+        .form-label {
+            color: #ffffff;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        select.form-control {
+            color: #ffffff;
+        }
+
+        select.form-control option {
+            background-color: #2d2d2d;
+            color: #ffffff;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.25rem;
+        }
+
+        .btn-primary {
+            background-color: #00ff88;
+            color: #1a1a1a;
+        }
+
+        .btn-primary:hover {
+            background-color: #00cc6a;
+            transform: translateY(-2px);
+            color: #1a1a1a;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #ffffff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            transform: translateY(-2px);
+            color: #ffffff;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: #ffffff;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            transform: translateY(-2px);
+            color: #ffffff;
+        }
+
+        /* Cards */
+        .article-card {
+            background-color: #2d2d2d;
+            border: 1px solid #00ff88;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
+        }
+
+        .article-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #00ff88;
+            font-weight: bold;
+        }
+
+        .article-title a {
+            color: #00ff88;
+            text-decoration: none;
+        }
+
+        .article-title a:hover {
+            color: #ffffff;
+        }
+
+        .article-meta {
+            color: #cccccc;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-content {
+            color: #ffffff;
+        }
+
+        .article-content h1, .article-content h2, .article-content h3, 
+        .article-content h4, .article-content h5, .article-content h6 {
+            color: #ffffff;
+        }
+
+        .article-content p {
+            color: #ffffff;
+        }
+
+        .article-summary {
+            background-color: #1a1a1a;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .article-summary h3 {
+            color: #00ff88;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-actions {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #00ff88;
+        }
+
+        /* Search Form */
+        .search-form {
+            background-color: #2d2d2d;
+            border: 1px solid #00ff88;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .search-form .form-group {
+            margin-bottom: 1rem;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .pagination a {
+            padding: 0.75rem 1rem;
+            margin: 0 0.25rem;
+            border: 2px solid #00ff88;
+            text-decoration: none;
+            color: #00ff88;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .pagination a:hover {
+            background-color: #00ff88;
+            color: #1a1a1a;
+            transform: translateY(-2px);
+        }
+
+        .pagination .current {
+            padding: 0.75rem 1rem;
+            margin: 0 0.25rem;
+            background-color: #00ff88;
+            color: #1a1a1a;
+            border: 2px solid #00ff88;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Headings */
+        h1, h2, h3, h4, h5, h6 {
+            color: #ffffff;
+        }
+
+        h1 {
+            color: #00ff88;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            color: #00ff88;
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Links */
+        a {
+            color: #00ff88;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
+
+        /* Custom News App Branding */
+        .news-brand {
+            color: #00ff88;
+            font-weight: bold;
+        }
+
+        .status-approved {
+            color: #00ff88;
+            font-weight: bold;
+        }
+
+        .status-pending {
+            color: #ffc107;
+            font-weight: bold;
+        }
+
+        .status-draft {
+            color: #6c757d;
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                padding: 0 1rem;
+            }
+
+            .nav a {
+                margin: 0.5rem 0;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .article-card {
+                margin: 0.5rem 0;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nav">
+            <div>
+                <a href="{% url 'news:home' %}" class="nav-brand">📰 News App</a>
+                <a href="{% url 'news:home' %}">Home</a>
+                <a href="{% url 'news:article_list' %}">Articles</a>
+                {% if user.is_authenticated %}
+                    {% if user.is_journalist %}
+                        <a href="{% url 'news:create_article' %}">Create Article</a>
+                        <a href="{% url 'news:create_newsletter' %}">Create Newsletter</a>
+                    {% endif %}
+                    {% if user.is_editor %}
+                        <a href="{% url 'news:article_list' %}">Review Articles</a>
+                    {% endif %}
+                    {% if user.is_reader %}
+                        <a href="{% url 'news:subscription_management' %}">My Subscriptions</a>
+                    {% endif %}
+                {% endif %}
+            </div>
+            <div>
+                {% if user.is_authenticated %}
+                    <span class="news-brand">Welcome, {{ user.username }} ({{ user.get_role_display }})</span>
+                    <a href="{% url 'news:logout' %}">Logout</a>
+                {% else %}
+                    <a href="{% url 'news:login' %}">Login</a>
+                    <a href="{% url 'news:register' %}">Register</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="message {{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

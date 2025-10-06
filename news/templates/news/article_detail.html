@@ -1,0 +1,45 @@
+{% extends 'news/base.html' %}
+
+{% block title %}{{ article.title }} - News Application{% endblock %}
+
+{% block content %}
+<div class="article-card">
+    <h1 class="article-title">{{ article.title }}</h1>
+    <div class="article-meta">
+        By {{ article.author.username }} 
+        {% if article.publisher %} | {{ article.publisher.name }}{% endif %}
+        {% if article.category %} | {{ article.category.name }}{% endif %}
+        | {{ article.created_at|date:"M d, Y" }}
+        {% if article.is_approved %}
+            | <span class="status-approved">✓ Approved</span>
+        {% endif %}
+    </div>
+    
+    {% if article.summary %}
+        <div class="article-summary">
+            <h3>Summary</h3>
+            <p>{{ article.summary }}</p>
+        </div>
+    {% endif %}
+    
+    <div class="article-content">
+        {{ article.content|linebreaks }}
+    </div>
+    
+    {% if user.is_authenticated %}
+        {% if user == article.author or user.is_editor %}
+            <div class="article-actions">
+                <a href="{% url 'news:edit_article' article.pk %}" class="btn btn-secondary">Edit Article</a>
+            </div>
+        {% endif %}
+        
+        {% if user.is_editor and not article.is_approved %}
+            <div class="article-actions">
+                <a href="{% url 'news:approve_article' article.pk %}" class="btn btn-primary">Approve Article</a>
+            </div>
+        {% endif %}
+    {% endif %}
+</div>
+
+<a href="{% url 'news:article_list' %}" class="btn btn-secondary">Back to Articles</a>
+{% endblock %}

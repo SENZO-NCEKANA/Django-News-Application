@@ -1,0 +1,42 @@
+{% extends 'news/base.html' %}
+
+{% block title %}My Subscriptions - News Application{% endblock %}
+
+{% block content %}
+<h1>My Subscriptions</h1>
+
+<h2>Add New Subscription</h2>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="id_publisher">Publisher:</label>
+        {{ form.publisher }}
+    </div>
+    <div class="form-group">
+        <label for="id_journalist">Journalist:</label>
+        {{ form.journalist }}
+    </div>
+    <button type="submit" class="btn btn-primary">Add Subscription</button>
+</form>
+
+<h2>Current Subscriptions</h2>
+{% if subscriptions %}
+    {% for subscription in subscriptions %}
+        <div class="article-card">
+            <h3>
+                {% if subscription.publisher %}
+                    Publisher: {{ subscription.publisher.name }}
+                {% else %}
+                    Journalist: {{ subscription.journalist.username }}
+                {% endif %}
+            </h3>
+            <p>Subscribed on: {{ subscription.created_at|date:"M d, Y" }}</p>
+            <a href="{% url 'news:delete_subscription' subscription.pk %}" class="btn btn-danger">Unsubscribe</a>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>You have no subscriptions yet.</p>
+{% endif %}
+
+<a href="{% url 'news:home' %}" class="btn btn-secondary">Back to Home</a>
+{% endblock %}

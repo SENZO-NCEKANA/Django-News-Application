@@ -1,0 +1,71 @@
+{% extends 'news/base.html' %}
+
+{% block title %}Home - News Application{% endblock %}
+
+{% block content %}
+<h1>Latest News Articles</h1>
+
+<div class="search-form">
+    <form method="get" action="{% url 'news:search_articles' %}">
+        <div class="form-group">
+            <input type="text" name="q" class="form-control" placeholder="Search articles..." value="{{ query }}">
+        </div>
+        <div class="form-group">
+            <select name="category" class="form-control">
+                <option value="">All Categories</option>
+                {% for category in categories %}
+                    <option value="{{ category.name }}">{{ category.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <select name="publisher" class="form-control">
+                <option value="">All Publishers</option>
+                {% for publisher in publishers %}
+                    <option value="{{ publisher.name }}">{{ publisher.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
+
+{% if page_obj %}
+    {% for article in page_obj %}
+        <div class="article-card">
+            <h2 class="article-title">
+                <a href="{% url 'news:article_detail' article.pk %}">{{ article.title }}</a>
+            </h2>
+            <div class="article-meta">
+                By {{ article.author.username }} 
+                {% if article.publisher %} | {{ article.publisher.name }}{% endif %}
+                {% if article.category %} | {{ article.category.name }}{% endif %}
+                | {{ article.created_at|date:"M d, Y" }}
+            </div>
+            {% if article.summary %}
+                <p>{{ article.summary }}</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    {% if page_obj.has_other_pages %}
+        <div class="pagination">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; First</a>
+                <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+            {% endif %}
+        </div>
+    {% endif %}
+{% else %}
+    <p>No articles found.</p>
+{% endif %}
+{% endblock %}

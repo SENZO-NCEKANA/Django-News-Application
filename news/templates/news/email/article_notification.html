@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>New Article: {{ article.title }}</title>
+</head>
+<body>
+    <h1>New Article: {{ article.title }}</h1>
+    
+    <p>Hello!</p>
+    
+    <p>A new article has been published that you might be interested in:</p>
+    
+    <h2>{{ article.title }}</h2>
+    
+    <p><strong>Author:</strong> {{ article.author.username }}</p>
+    {% if article.publisher %}
+        <p><strong>Publisher:</strong> {{ article.publisher.name }}</p>
+    {% endif %}
+    {% if article.category %}
+        <p><strong>Category:</strong> {{ article.category.name }}</p>
+    {% endif %}
+    
+    {% if article.summary %}
+        <p><strong>Summary:</strong></p>
+        <p>{{ article.summary }}</p>
+    {% endif %}
+    
+    <p>Read the full article: <a href="{{ site_url }}/articles/{{ article.pk }}/">{{ article.title }}</a></p>
+    
+    <p>Thank you for subscribing to our news service!</p>
+</body>
+</html>
