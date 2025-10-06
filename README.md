@@ -1,6 +1,6 @@
 # Django News Application
 
-A Django-based news application that allows readers to view articles published by publishers and independent journalists, with role-based access control and subscription management.
+A news application built with Django that lets users read articles from different publishers and journalists. It includes user roles, subscriptions, and article management features.
 
 ## Features
 
@@ -18,15 +18,23 @@ A Django-based news application that allows readers to view articles published b
 - Role-based access control and permissions
 
 ### Technical Features
+<<<<<<< HEAD
 - Custom User model with role-based fields
 - Django signals for automated notifications
 - Unit testing
 - Simple HTML templates
 - Docker support
+=======
+- User roles and permissions
+- Email notifications
+- Basic testing
+- HTML templates
+- Docker setup
+>>>>>>> 22a1121 (Update documentation with more natural language)
 
-## Quick Start
+## Getting Started
 
-### Option 1: Using Docker (Recommended)
+### Method 1: Using Docker
 
 #### Prerequisites
 - Docker and Docker Compose installed
@@ -79,7 +87,7 @@ docker-compose up --build --force-recreate
    cd django-news-application
    ```
 
-2. **Create a virtual environment**
+2. **Set up Python environment**
    ```bash
    python3 -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
@@ -233,7 +241,7 @@ The test suite includes:
 
 ## Documentation
 
-Basic documentation is available in the `docs/` directory.
+Documentation files are in the `docs/` folder.
 
 ## Project Structure
 
@@ -261,6 +269,6 @@ django-news-application/
 └── README.md             # This file
 ```
 
-## Author
+## About
 
-This project was created as part of a Capstone Project –Consolidation Task.
+This project was built as part of a Capstone Project – Consolidation Task.
