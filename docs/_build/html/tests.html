@@ -58,8 +58,76 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tests Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#tests-module">Tests Module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#test-classes">Test Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-news.tests">Tests Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#news.tests.APITest"><code class="docutils literal notranslate"><span class="pre">APITest</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.APITest.setUp"><code class="docutils literal notranslate"><span class="pre">APITest.setUp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.APITest.test_approve_article_api_requires_editor"><code class="docutils literal notranslate"><span class="pre">APITest.test_approve_article_api_requires_editor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.APITest.test_approve_article_api_with_editor"><code class="docutils literal notranslate"><span class="pre">APITest.test_approve_article_api_with_editor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.APITest.test_article_list_api_requires_authentication"><code class="docutils literal notranslate"><span class="pre">APITest.test_article_list_api_requires_authentication()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.APITest.test_article_list_api_with_authentication"><code class="docutils literal notranslate"><span class="pre">APITest.test_article_list_api_with_authentication()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.APITest.test_category_list_api"><code class="docutils literal notranslate"><span class="pre">APITest.test_category_list_api()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.APITest.test_create_article_api"><code class="docutils literal notranslate"><span class="pre">APITest.test_create_article_api()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.APITest.test_publisher_list_api"><code class="docutils literal notranslate"><span class="pre">APITest.test_publisher_list_api()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.APITest.test_user_subscriptions_api"><code class="docutils literal notranslate"><span class="pre">APITest.test_user_subscriptions_api()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#news.tests.ArticleModelTest"><code class="docutils literal notranslate"><span class="pre">ArticleModelTest</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.ArticleModelTest.setUp"><code class="docutils literal notranslate"><span class="pre">ArticleModelTest.setUp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.ArticleModelTest.test_article_approval"><code class="docutils literal notranslate"><span class="pre">ArticleModelTest.test_article_approval()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.ArticleModelTest.test_article_creation"><code class="docutils literal notranslate"><span class="pre">ArticleModelTest.test_article_creation()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#news.tests.ArticleViewTest"><code class="docutils literal notranslate"><span class="pre">ArticleViewTest</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.ArticleViewTest.setUp"><code class="docutils literal notranslate"><span class="pre">ArticleViewTest.setUp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.ArticleViewTest.test_article_detail_view"><code class="docutils literal notranslate"><span class="pre">ArticleViewTest.test_article_detail_view()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.ArticleViewTest.test_create_article_requires_journalist_role"><code class="docutils literal notranslate"><span class="pre">ArticleViewTest.test_create_article_requires_journalist_role()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.ArticleViewTest.test_create_article_requires_login"><code class="docutils literal notranslate"><span class="pre">ArticleViewTest.test_create_article_requires_login()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.ArticleViewTest.test_home_view"><code class="docutils literal notranslate"><span class="pre">ArticleViewTest.test_home_view()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#news.tests.EmailNotificationTest"><code class="docutils literal notranslate"><span class="pre">EmailNotificationTest</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.EmailNotificationTest.setUp"><code class="docutils literal notranslate"><span class="pre">EmailNotificationTest.setUp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.EmailNotificationTest.test_email_notification_on_approval"><code class="docutils literal notranslate"><span class="pre">EmailNotificationTest.test_email_notification_on_approval()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#news.tests.PasswordResetTest"><code class="docutils literal notranslate"><span class="pre">PasswordResetTest</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.PasswordResetTest.setUp"><code class="docutils literal notranslate"><span class="pre">PasswordResetTest.setUp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.PasswordResetTest.test_forgot_password_view_get"><code class="docutils literal notranslate"><span class="pre">PasswordResetTest.test_forgot_password_view_get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.PasswordResetTest.test_forgot_password_view_post_invalid_email"><code class="docutils literal notranslate"><span class="pre">PasswordResetTest.test_forgot_password_view_post_invalid_email()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.PasswordResetTest.test_forgot_password_view_post_valid_email"><code class="docutils literal notranslate"><span class="pre">PasswordResetTest.test_forgot_password_view_post_valid_email()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.PasswordResetTest.test_reset_password_post_valid"><code class="docutils literal notranslate"><span class="pre">PasswordResetTest.test_reset_password_post_valid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.PasswordResetTest.test_reset_password_view_invalid_token"><code class="docutils literal notranslate"><span class="pre">PasswordResetTest.test_reset_password_view_invalid_token()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.PasswordResetTest.test_reset_password_view_valid_token"><code class="docutils literal notranslate"><span class="pre">PasswordResetTest.test_reset_password_view_valid_token()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#news.tests.PublisherModelTest"><code class="docutils literal notranslate"><span class="pre">PublisherModelTest</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.PublisherModelTest.setUp"><code class="docutils literal notranslate"><span class="pre">PublisherModelTest.setUp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.PublisherModelTest.test_publisher_creation"><code class="docutils literal notranslate"><span class="pre">PublisherModelTest.test_publisher_creation()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#news.tests.SubscriptionModelTest"><code class="docutils literal notranslate"><span class="pre">SubscriptionModelTest</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.SubscriptionModelTest.setUp"><code class="docutils literal notranslate"><span class="pre">SubscriptionModelTest.setUp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.SubscriptionModelTest.test_journalist_subscription"><code class="docutils literal notranslate"><span class="pre">SubscriptionModelTest.test_journalist_subscription()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.SubscriptionModelTest.test_publisher_subscription"><code class="docutils literal notranslate"><span class="pre">SubscriptionModelTest.test_publisher_subscription()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#news.tests.UserModelTest"><code class="docutils literal notranslate"><span class="pre">UserModelTest</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.UserModelTest.setUp"><code class="docutils literal notranslate"><span class="pre">UserModelTest.setUp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.UserModelTest.test_user_creation"><code class="docutils literal notranslate"><span class="pre">UserModelTest.test_user_creation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#news.tests.UserModelTest.test_user_roles"><code class="docutils literal notranslate"><span class="pre">UserModelTest.test_user_roles()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#test-classes">Test Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">UserModelTest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">PublisherModelTest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7"><code class="docutils literal notranslate"><span class="pre">ArticleModelTest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11"><code class="docutils literal notranslate"><span class="pre">SubscriptionModelTest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15"><code class="docutils literal notranslate"><span class="pre">ArticleViewTest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id21"><code class="docutils literal notranslate"><span class="pre">APITest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id31"><code class="docutils literal notranslate"><span class="pre">EmailNotificationTest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id34"><code class="docutils literal notranslate"><span class="pre">PasswordResetTest</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -93,10 +161,555 @@
   <section id="tests-documentation">
 <h1>Tests Documentation<a class="headerlink" href="#tests-documentation" title="Link to this heading"></a></h1>
 <p>This section documents all the test classes and methods in the News Application.</p>
-<section id="tests-module">
-<h2>Tests Module<a class="headerlink" href="#tests-module" title="Link to this heading"></a></h2>
+<section id="module-news.tests">
+<span id="tests-module"></span><h2>Tests Module<a class="headerlink" href="#module-news.tests" title="Link to this heading"></a></h2>
+<p>Unit tests for news application models, views, and API.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="news.tests.APITest">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">news.tests.</span></span><span class="sig-name descname"><span class="pre">APITest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.APITest" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APITestCase</span></code></p>
+<p>Test cases for REST API.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.APITest.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.APITest.setUp" title="Link to this definition"></a></dt>
+<dd><p>Set up test data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.APITest.test_approve_article_api_requires_editor">
+<span class="sig-name descname"><span class="pre">test_approve_article_api_requires_editor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest.test_approve_article_api_requires_editor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.APITest.test_approve_article_api_requires_editor" title="Link to this definition"></a></dt>
+<dd><p>Test that approving article requires editor role.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.APITest.test_approve_article_api_with_editor">
+<span class="sig-name descname"><span class="pre">test_approve_article_api_with_editor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest.test_approve_article_api_with_editor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.APITest.test_approve_article_api_with_editor" title="Link to this definition"></a></dt>
+<dd><p>Test approving article with editor role.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.APITest.test_article_list_api_requires_authentication">
+<span class="sig-name descname"><span class="pre">test_article_list_api_requires_authentication</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest.test_article_list_api_requires_authentication"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.APITest.test_article_list_api_requires_authentication" title="Link to this definition"></a></dt>
+<dd><p>Test that article list API requires authentication.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.APITest.test_article_list_api_with_authentication">
+<span class="sig-name descname"><span class="pre">test_article_list_api_with_authentication</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest.test_article_list_api_with_authentication"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.APITest.test_article_list_api_with_authentication" title="Link to this definition"></a></dt>
+<dd><p>Test article list API with authentication.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.APITest.test_category_list_api">
+<span class="sig-name descname"><span class="pre">test_category_list_api</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest.test_category_list_api"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.APITest.test_category_list_api" title="Link to this definition"></a></dt>
+<dd><p>Test category list API.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.APITest.test_create_article_api">
+<span class="sig-name descname"><span class="pre">test_create_article_api</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest.test_create_article_api"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.APITest.test_create_article_api" title="Link to this definition"></a></dt>
+<dd><p>Test creating article via API.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.APITest.test_publisher_list_api">
+<span class="sig-name descname"><span class="pre">test_publisher_list_api</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest.test_publisher_list_api"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.APITest.test_publisher_list_api" title="Link to this definition"></a></dt>
+<dd><p>Test publisher list API.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.APITest.test_user_subscriptions_api">
+<span class="sig-name descname"><span class="pre">test_user_subscriptions_api</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest.test_user_subscriptions_api"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.APITest.test_user_subscriptions_api" title="Link to this definition"></a></dt>
+<dd><p>Test user subscriptions API.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="news.tests.ArticleModelTest">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">news.tests.</span></span><span class="sig-name descname"><span class="pre">ArticleModelTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleModelTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.ArticleModelTest" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Test cases for Article model.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.ArticleModelTest.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleModelTest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.ArticleModelTest.setUp" title="Link to this definition"></a></dt>
+<dd><p>Set up test data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.ArticleModelTest.test_article_approval">
+<span class="sig-name descname"><span class="pre">test_article_approval</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleModelTest.test_article_approval"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.ArticleModelTest.test_article_approval" title="Link to this definition"></a></dt>
+<dd><p>Test article approval.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.ArticleModelTest.test_article_creation">
+<span class="sig-name descname"><span class="pre">test_article_creation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleModelTest.test_article_creation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.ArticleModelTest.test_article_creation" title="Link to this definition"></a></dt>
+<dd><p>Test article creation.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="news.tests.ArticleViewTest">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">news.tests.</span></span><span class="sig-name descname"><span class="pre">ArticleViewTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleViewTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.ArticleViewTest" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Test cases for article views.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.ArticleViewTest.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleViewTest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.ArticleViewTest.setUp" title="Link to this definition"></a></dt>
+<dd><p>Set up test data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.ArticleViewTest.test_article_detail_view">
+<span class="sig-name descname"><span class="pre">test_article_detail_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleViewTest.test_article_detail_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.ArticleViewTest.test_article_detail_view" title="Link to this definition"></a></dt>
+<dd><p>Test article detail view.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.ArticleViewTest.test_create_article_requires_journalist_role">
+<span class="sig-name descname"><span class="pre">test_create_article_requires_journalist_role</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleViewTest.test_create_article_requires_journalist_role"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.ArticleViewTest.test_create_article_requires_journalist_role" title="Link to this definition"></a></dt>
+<dd><p>Test that creating article requires journalist role.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.ArticleViewTest.test_create_article_requires_login">
+<span class="sig-name descname"><span class="pre">test_create_article_requires_login</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleViewTest.test_create_article_requires_login"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.ArticleViewTest.test_create_article_requires_login" title="Link to this definition"></a></dt>
+<dd><p>Test that creating article requires login.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.ArticleViewTest.test_home_view">
+<span class="sig-name descname"><span class="pre">test_home_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleViewTest.test_home_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.ArticleViewTest.test_home_view" title="Link to this definition"></a></dt>
+<dd><p>Test home view.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="news.tests.EmailNotificationTest">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">news.tests.</span></span><span class="sig-name descname"><span class="pre">EmailNotificationTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#EmailNotificationTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.EmailNotificationTest" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Test cases for email notifications.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.EmailNotificationTest.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#EmailNotificationTest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.EmailNotificationTest.setUp" title="Link to this definition"></a></dt>
+<dd><p>Set up test data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.EmailNotificationTest.test_email_notification_on_approval">
+<span class="sig-name descname"><span class="pre">test_email_notification_on_approval</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#EmailNotificationTest.test_email_notification_on_approval"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.EmailNotificationTest.test_email_notification_on_approval" title="Link to this definition"></a></dt>
+<dd><p>Test that email is sent when article is approved.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="news.tests.PasswordResetTest">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">news.tests.</span></span><span class="sig-name descname"><span class="pre">PasswordResetTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PasswordResetTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.PasswordResetTest" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Test password reset functionality.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.PasswordResetTest.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PasswordResetTest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.PasswordResetTest.setUp" title="Link to this definition"></a></dt>
+<dd><p>Set up test data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.PasswordResetTest.test_forgot_password_view_get">
+<span class="sig-name descname"><span class="pre">test_forgot_password_view_get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PasswordResetTest.test_forgot_password_view_get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.PasswordResetTest.test_forgot_password_view_get" title="Link to this definition"></a></dt>
+<dd><p>Test forgot password view GET request.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.PasswordResetTest.test_forgot_password_view_post_invalid_email">
+<span class="sig-name descname"><span class="pre">test_forgot_password_view_post_invalid_email</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PasswordResetTest.test_forgot_password_view_post_invalid_email"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.PasswordResetTest.test_forgot_password_view_post_invalid_email" title="Link to this definition"></a></dt>
+<dd><p>Test forgot password view with invalid email.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.PasswordResetTest.test_forgot_password_view_post_valid_email">
+<span class="sig-name descname"><span class="pre">test_forgot_password_view_post_valid_email</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PasswordResetTest.test_forgot_password_view_post_valid_email"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.PasswordResetTest.test_forgot_password_view_post_valid_email" title="Link to this definition"></a></dt>
+<dd><p>Test forgot password view with valid email.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.PasswordResetTest.test_reset_password_post_valid">
+<span class="sig-name descname"><span class="pre">test_reset_password_post_valid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PasswordResetTest.test_reset_password_post_valid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.PasswordResetTest.test_reset_password_post_valid" title="Link to this definition"></a></dt>
+<dd><p>Test reset password POST with valid data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.PasswordResetTest.test_reset_password_view_invalid_token">
+<span class="sig-name descname"><span class="pre">test_reset_password_view_invalid_token</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PasswordResetTest.test_reset_password_view_invalid_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.PasswordResetTest.test_reset_password_view_invalid_token" title="Link to this definition"></a></dt>
+<dd><p>Test reset password view with invalid token.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.PasswordResetTest.test_reset_password_view_valid_token">
+<span class="sig-name descname"><span class="pre">test_reset_password_view_valid_token</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PasswordResetTest.test_reset_password_view_valid_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.PasswordResetTest.test_reset_password_view_valid_token" title="Link to this definition"></a></dt>
+<dd><p>Test reset password view with valid token.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="news.tests.PublisherModelTest">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">news.tests.</span></span><span class="sig-name descname"><span class="pre">PublisherModelTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PublisherModelTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.PublisherModelTest" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Test cases for Publisher model.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.PublisherModelTest.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PublisherModelTest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.PublisherModelTest.setUp" title="Link to this definition"></a></dt>
+<dd><p>Set up test data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.PublisherModelTest.test_publisher_creation">
+<span class="sig-name descname"><span class="pre">test_publisher_creation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PublisherModelTest.test_publisher_creation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.PublisherModelTest.test_publisher_creation" title="Link to this definition"></a></dt>
+<dd><p>Test publisher creation.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="news.tests.SubscriptionModelTest">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">news.tests.</span></span><span class="sig-name descname"><span class="pre">SubscriptionModelTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#SubscriptionModelTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.SubscriptionModelTest" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Test cases for Subscription model.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.SubscriptionModelTest.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#SubscriptionModelTest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.SubscriptionModelTest.setUp" title="Link to this definition"></a></dt>
+<dd><p>Set up test data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.SubscriptionModelTest.test_journalist_subscription">
+<span class="sig-name descname"><span class="pre">test_journalist_subscription</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#SubscriptionModelTest.test_journalist_subscription"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.SubscriptionModelTest.test_journalist_subscription" title="Link to this definition"></a></dt>
+<dd><p>Test journalist subscription.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.SubscriptionModelTest.test_publisher_subscription">
+<span class="sig-name descname"><span class="pre">test_publisher_subscription</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#SubscriptionModelTest.test_publisher_subscription"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.SubscriptionModelTest.test_publisher_subscription" title="Link to this definition"></a></dt>
+<dd><p>Test publisher subscription.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="news.tests.UserModelTest">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">news.tests.</span></span><span class="sig-name descname"><span class="pre">UserModelTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#UserModelTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.UserModelTest" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Test cases for User model functionality and role management.</p>
+<p>This test class validates user creation, role assignment, and
+role-based method functionality. It ensures the custom User
+model works correctly with different user roles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>user</strong> (<a class="reference internal" href="models.html#id0" title="news.models.User"><em>User</em></a>) – Test user instance for role testing</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.UserModelTest.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#UserModelTest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.UserModelTest.setUp" title="Link to this definition"></a></dt>
+<dd><p>Set up test data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.UserModelTest.test_user_creation">
+<span class="sig-name descname"><span class="pre">test_user_creation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#UserModelTest.test_user_creation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.UserModelTest.test_user_creation" title="Link to this definition"></a></dt>
+<dd><p>Test user creation with proper role assignment.</p>
+<p>Validates that a user can be created with the correct
+username, email, and role attributes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="news.tests.UserModelTest.test_user_roles">
+<span class="sig-name descname"><span class="pre">test_user_roles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#UserModelTest.test_user_roles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#news.tests.UserModelTest.test_user_roles" title="Link to this definition"></a></dt>
+<dd><p>Test user role method functionality.</p>
+<p>Validates that role checking methods (is_reader, is_editor,
+is_journalist) work correctly for different user roles.</p>
+</dd></dl>
+
+</dd></dl>
+
 <section id="test-classes">
 <h3>Test Classes<a class="headerlink" href="#test-classes" title="Link to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">news.tests.</span></span><span class="sig-name descname"><span class="pre">UserModelTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#UserModelTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Test cases for User model functionality and role management.</p>
+<p>This test class validates user creation, role assignment, and
+role-based method functionality. It ensures the custom User
+model works correctly with different user roles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>user</strong> (<a class="reference internal" href="models.html#id0" title="news.models.User"><em>User</em></a>) – Test user instance for role testing</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#UserModelTest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd><p>Set up test data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">test_user_creation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#UserModelTest.test_user_creation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dd><p>Test user creation with proper role assignment.</p>
+<p>Validates that a user can be created with the correct
+username, email, and role attributes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">test_user_roles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#UserModelTest.test_user_roles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd><p>Test user role method functionality.</p>
+<p>Validates that role checking methods (is_reader, is_editor,
+is_journalist) work correctly for different user roles.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="id4">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">news.tests.</span></span><span class="sig-name descname"><span class="pre">PublisherModelTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PublisherModelTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Test cases for Publisher model.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PublisherModelTest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id5" title="Link to this definition"></a></dt>
+<dd><p>Set up test data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-name descname"><span class="pre">test_publisher_creation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PublisherModelTest.test_publisher_creation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id6" title="Link to this definition"></a></dt>
+<dd><p>Test publisher creation.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="id7">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">news.tests.</span></span><span class="sig-name descname"><span class="pre">ArticleModelTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleModelTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id7" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Test cases for Article model.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleModelTest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id8" title="Link to this definition"></a></dt>
+<dd><p>Set up test data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id9">
+<span class="sig-name descname"><span class="pre">test_article_approval</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleModelTest.test_article_approval"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id9" title="Link to this definition"></a></dt>
+<dd><p>Test article approval.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id10">
+<span class="sig-name descname"><span class="pre">test_article_creation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleModelTest.test_article_creation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id10" title="Link to this definition"></a></dt>
+<dd><p>Test article creation.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="id11">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">news.tests.</span></span><span class="sig-name descname"><span class="pre">SubscriptionModelTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#SubscriptionModelTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id11" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Test cases for Subscription model.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="id12">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#SubscriptionModelTest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id12" title="Link to this definition"></a></dt>
+<dd><p>Set up test data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id13">
+<span class="sig-name descname"><span class="pre">test_journalist_subscription</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#SubscriptionModelTest.test_journalist_subscription"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id13" title="Link to this definition"></a></dt>
+<dd><p>Test journalist subscription.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id14">
+<span class="sig-name descname"><span class="pre">test_publisher_subscription</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#SubscriptionModelTest.test_publisher_subscription"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id14" title="Link to this definition"></a></dt>
+<dd><p>Test publisher subscription.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="id15">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">news.tests.</span></span><span class="sig-name descname"><span class="pre">ArticleViewTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleViewTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id15" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Test cases for article views.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="id16">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleViewTest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id16" title="Link to this definition"></a></dt>
+<dd><p>Set up test data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id17">
+<span class="sig-name descname"><span class="pre">test_article_detail_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleViewTest.test_article_detail_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id17" title="Link to this definition"></a></dt>
+<dd><p>Test article detail view.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id18">
+<span class="sig-name descname"><span class="pre">test_create_article_requires_journalist_role</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleViewTest.test_create_article_requires_journalist_role"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id18" title="Link to this definition"></a></dt>
+<dd><p>Test that creating article requires journalist role.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id19">
+<span class="sig-name descname"><span class="pre">test_create_article_requires_login</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleViewTest.test_create_article_requires_login"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id19" title="Link to this definition"></a></dt>
+<dd><p>Test that creating article requires login.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id20">
+<span class="sig-name descname"><span class="pre">test_home_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#ArticleViewTest.test_home_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id20" title="Link to this definition"></a></dt>
+<dd><p>Test home view.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="id21">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">news.tests.</span></span><span class="sig-name descname"><span class="pre">APITest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id21" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APITestCase</span></code></p>
+<p>Test cases for REST API.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="id22">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id22" title="Link to this definition"></a></dt>
+<dd><p>Set up test data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id23">
+<span class="sig-name descname"><span class="pre">test_approve_article_api_requires_editor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest.test_approve_article_api_requires_editor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id23" title="Link to this definition"></a></dt>
+<dd><p>Test that approving article requires editor role.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id24">
+<span class="sig-name descname"><span class="pre">test_approve_article_api_with_editor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest.test_approve_article_api_with_editor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id24" title="Link to this definition"></a></dt>
+<dd><p>Test approving article with editor role.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id25">
+<span class="sig-name descname"><span class="pre">test_article_list_api_requires_authentication</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest.test_article_list_api_requires_authentication"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id25" title="Link to this definition"></a></dt>
+<dd><p>Test that article list API requires authentication.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id26">
+<span class="sig-name descname"><span class="pre">test_article_list_api_with_authentication</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest.test_article_list_api_with_authentication"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id26" title="Link to this definition"></a></dt>
+<dd><p>Test article list API with authentication.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id27">
+<span class="sig-name descname"><span class="pre">test_category_list_api</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest.test_category_list_api"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id27" title="Link to this definition"></a></dt>
+<dd><p>Test category list API.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id28">
+<span class="sig-name descname"><span class="pre">test_create_article_api</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest.test_create_article_api"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id28" title="Link to this definition"></a></dt>
+<dd><p>Test creating article via API.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id29">
+<span class="sig-name descname"><span class="pre">test_publisher_list_api</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest.test_publisher_list_api"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id29" title="Link to this definition"></a></dt>
+<dd><p>Test publisher list API.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id30">
+<span class="sig-name descname"><span class="pre">test_user_subscriptions_api</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#APITest.test_user_subscriptions_api"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id30" title="Link to this definition"></a></dt>
+<dd><p>Test user subscriptions API.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="id31">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">news.tests.</span></span><span class="sig-name descname"><span class="pre">EmailNotificationTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#EmailNotificationTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id31" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Test cases for email notifications.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="id32">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#EmailNotificationTest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id32" title="Link to this definition"></a></dt>
+<dd><p>Set up test data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id33">
+<span class="sig-name descname"><span class="pre">test_email_notification_on_approval</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#EmailNotificationTest.test_email_notification_on_approval"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id33" title="Link to this definition"></a></dt>
+<dd><p>Test that email is sent when article is approved.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="id34">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">news.tests.</span></span><span class="sig-name descname"><span class="pre">PasswordResetTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PasswordResetTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id34" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Test password reset functionality.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="id35">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PasswordResetTest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id35" title="Link to this definition"></a></dt>
+<dd><p>Set up test data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id36">
+<span class="sig-name descname"><span class="pre">test_forgot_password_view_get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PasswordResetTest.test_forgot_password_view_get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id36" title="Link to this definition"></a></dt>
+<dd><p>Test forgot password view GET request.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id37">
+<span class="sig-name descname"><span class="pre">test_forgot_password_view_post_invalid_email</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PasswordResetTest.test_forgot_password_view_post_invalid_email"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id37" title="Link to this definition"></a></dt>
+<dd><p>Test forgot password view with invalid email.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id38">
+<span class="sig-name descname"><span class="pre">test_forgot_password_view_post_valid_email</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PasswordResetTest.test_forgot_password_view_post_valid_email"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id38" title="Link to this definition"></a></dt>
+<dd><p>Test forgot password view with valid email.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id39">
+<span class="sig-name descname"><span class="pre">test_reset_password_post_valid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PasswordResetTest.test_reset_password_post_valid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id39" title="Link to this definition"></a></dt>
+<dd><p>Test reset password POST with valid data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id40">
+<span class="sig-name descname"><span class="pre">test_reset_password_view_invalid_token</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PasswordResetTest.test_reset_password_view_invalid_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id40" title="Link to this definition"></a></dt>
+<dd><p>Test reset password view with invalid token.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id41">
+<span class="sig-name descname"><span class="pre">test_reset_password_view_valid_token</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/news/tests.html#PasswordResetTest.test_reset_password_view_valid_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id41" title="Link to this definition"></a></dt>
+<dd><p>Test reset password view with valid token.</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 </section>
