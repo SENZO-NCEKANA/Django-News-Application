@@ -17,10 +17,12 @@ This guide explains how to run the News Application using Docker.
 
 2. **If using Docker Playground:**
    ```bash
-   # Upload the news-app-docker.zip file to Docker Playground
-   # Extract it and navigate to the directory
-   unzip news-app-docker.zip
-   cd news-app-docker
+   # Clone from GitHub repository
+   git clone https://github.com/YOUR_USERNAME/django-news-application.git
+   cd django-news-application
+   
+   # Switch to container branch (where Docker files are)
+   git checkout container
    
    # Start the application
    docker-compose up --build
