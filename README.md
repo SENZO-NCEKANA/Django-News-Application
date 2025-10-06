@@ -36,7 +36,7 @@ A Django-based news application that allows readers to view articles published b
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/django-news-application.git
+   git clone https://github.com/SENZO-NCEKANA/django-news-application.git
    cd django-news-application
    ```
 
