@@ -25,3 +25,4 @@ services:
         condition: service_healthy
     environment:
       - DEBUG=1
+      - DOCKER_ENV=1
