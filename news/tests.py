@@ -17,7 +17,14 @@ User = get_user_model()
 
 class UserModelTest(TestCase):
     """
-    Test cases for User model.
+    Test cases for User model functionality and role management.
+    
+    This test class validates user creation, role assignment, and
+    role-based method functionality. It ensures the custom User
+    model works correctly with different user roles.
+    
+    :param user: Test user instance for role testing
+    :type user: User
     """
     def setUp(self):
         """Set up test data."""
@@ -29,13 +36,23 @@ class UserModelTest(TestCase):
         )
 
     def test_user_creation(self):
-        """Test user creation."""
+        """
+        Test user creation with proper role assignment.
+        
+        Validates that a user can be created with the correct
+        username, email, and role attributes.
+        """
         self.assertEqual(self.user.username, 'testuser')
         self.assertEqual(self.user.role, 'reader')
         self.assertTrue(self.user.is_reader())
 
     def test_user_roles(self):
-        """Test user role methods."""
+        """
+        Test user role method functionality.
+        
+        Validates that role checking methods (is_reader, is_editor,
+        is_journalist) work correctly for different user roles.
+        """
         self.assertTrue(self.user.is_reader())
         self.assertFalse(self.user.is_editor())
         self.assertFalse(self.user.is_journalist())
