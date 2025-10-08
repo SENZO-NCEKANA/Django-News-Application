@@ -1,6 +1,6 @@
 # Django News Application
 
-A news application built with Django that lets users read articles from different publishers and journalists. It includes user roles, subscriptions, and article management features.
+A Django news application where users can read articles from publishers and journalists. Features user roles, subscriptions, and article management.
 
 ## Features
 
@@ -10,37 +10,29 @@ A news application built with Django that lets users read articles from differen
 - **Editor**: Can review, approve, and manage articles from their publishers
 
 ### Core Functionality
-- Article creation and management with approval workflow
-- Publisher and journalist subscription system
-- Email notifications when articles are approved
-- Twitter integration for article sharing
-- RESTful API for third-party integration
-- Role-based access control and permissions
+- Create and manage articles with approval process
+- Subscribe to publishers and journalists
+- Email notifications for approved articles
+- Share articles on Twitter
+- REST API for integration
+- User permissions and access control
 
 ### Technical Features
-<<<<<<< HEAD
-- Custom User model with role-based fields
-- Django signals for automated notifications
-- Unit testing
-- Simple HTML templates
-- Docker support
-=======
 - User roles and permissions
 - Email notifications
-- Basic testing
+- Testing
 - HTML templates
-- Docker setup
->>>>>>> 22a1121 (Update documentation with more natural language)
+- Docker support
 
-## Getting Started
+## Setup
 
-### Method 1: Using Docker
+### Using Docker
 
-#### Prerequisites
-- Docker and Docker Compose installed
-- Git (for cloning the repository)
+#### Requirements
+- Docker and Docker Compose
+- Git
 
-#### Setup Instructions
+#### Steps
 
 1. **Clone the repository**
    ```bash
@@ -48,14 +40,14 @@ A news application built with Django that lets users read articles from differen
    cd django-news-application
    ```
 
-2. **Start the application with Docker Compose**
+2. **Start the application**
    ```bash
    docker-compose up --build
    ```
 
 3. **Access the application**
-   - Open your browser and go to `http://localhost:8000`
-   - Admin credentials: `admin` / `admin123`
+   - Go to `http://localhost:8000`
+   - Admin login: `admin` / `admin123`
 
 #### Docker Commands
 ```bash
@@ -72,14 +64,14 @@ docker-compose logs -f
 docker-compose up --build --force-recreate
 ```
 
-### Option 2: Using Virtual Environment
+### Using Python Virtual Environment
 
-#### Prerequisites
-- Python 3.8+ installed
-- MySQL or MariaDB server
-- Git (for cloning the repository)
+#### Requirements
+- Python 3.8+
+- MySQL or MariaDB
+- Git
 
-#### Setup Instructions
+#### Steps
 
 1. **Clone the repository**
    ```bash
@@ -241,7 +233,7 @@ The test suite includes:
 
 ## Documentation
 
-Documentation files are in the `docs/` folder.
+See the `docs/` folder for documentation.
 
 ## Project Structure
 
