@@ -1,0 +1,240 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News Application Documentation &mdash; News Application 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Documentation" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            News Application
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="views.html">Views Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="forms.html">Forms Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="serializers.html">Serializers Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">Tests Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">News Application</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">News Application Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="news-application-documentation">
+<h1>News Application Documentation<a class="headerlink" href="#news-application-documentation" title="Link to this heading"></a></h1>
+<p>Welcome to the News Application documentation! This is a comprehensive Django-based news application that allows readers to view articles published by publishers and independent journalists, with role-based access control and subscription management.</p>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<section id="user-roles">
+<h3>User Roles<a class="headerlink" href="#user-roles" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Reader</strong>: Can view published articles and manage subscriptions</p></li>
+<li><p><strong>Journalist</strong>: Can create, edit, and manage articles and newsletters</p></li>
+<li><p><strong>Editor</strong>: Can review, approve, and manage articles from their publishers</p></li>
+</ul>
+</section>
+<section id="core-functionality">
+<h3>Core Functionality<a class="headerlink" href="#core-functionality" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Article creation and management with approval workflow</p></li>
+<li><p>Publisher and journalist subscription system</p></li>
+<li><p>Email notifications when articles are approved</p></li>
+<li><p>Twitter integration for article sharing</p></li>
+<li><p>RESTful API for third-party integration</p></li>
+<li><p>Role-based access control and permissions</p></li>
+</ul>
+</section>
+<section id="technical-features">
+<h3>Technical Features<a class="headerlink" href="#technical-features" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Custom User model with role-based fields</p></li>
+<li><p>Django signals for automated notifications</p></li>
+<li><p>Comprehensive unit testing</p></li>
+<li><p>PEP 8 compliant code</p></li>
+<li><p>Simple HTML templates with minimal styling</p></li>
+</ul>
+</section>
+</section>
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Install dependencies: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></p></li>
+<li><p>Run migrations: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">migrate</span></code></p></li>
+<li><p>Set up groups: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">setup_groups</span></code></p></li>
+<li><p>Create sample data: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">create_sample_data</span></code></p></li>
+<li><p>Run server: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></code></p></li>
+</ol>
+</section>
+<section id="api-documentation">
+<h2>API Documentation<a class="headerlink" href="#api-documentation" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#api-overview">API Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#endpoints">Endpoints</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="models-documentation">
+<h2>Models Documentation<a class="headerlink" href="#models-documentation" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="models.html#module-news.models">User Model</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="views-documentation">
+<h2>Views Documentation<a class="headerlink" href="#views-documentation" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="views.html">Views Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="views.html#module-news.views">Web Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#module-news.api_views">API Views</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="forms-documentation">
+<h2>Forms Documentation<a class="headerlink" href="#forms-documentation" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="forms.html">Forms Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="forms.html#module-news.forms">Forms Module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="serializers-documentation">
+<h2>Serializers Documentation<a class="headerlink" href="#serializers-documentation" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="serializers.html">Serializers Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="serializers.html#module-news.serializers">Serializers Module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="tests-documentation">
+<h2>Tests Documentation<a class="headerlink" href="#tests-documentation" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">Tests Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#module-news.tests">Tests Module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api.html" class="btn btn-neutral float-right" title="API Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Django News Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

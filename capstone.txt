@@ -2,14 +2,3 @@ Django News Application - Capstone Project
 
 GitHub Repository: https://github.com/SENZO-NCEKANA/Django-News-Application
 
-This is a Django news application with:
-- User roles (Reader, Journalist, Editor)
-- Article management
-- Subscription system
-- Email notifications
-- REST API
-- Docker support
-- Testing
-- Documentation
-
-Built as part of a Capstone Project – Consolidation Task.
